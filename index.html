@@ -23,8 +23,10 @@ img{display:block;max-width:100%;}
 a{text-decoration:none;color:inherit;}
 button{font-family:inherit;cursor:pointer;}
 
-/* Translation Classes */
-.lang-en, .lang-es { display: none; }
+/* Translation Control */
+body.lang-pt .lang-en, body.lang-pt .lang-es { display: none !important; }
+body.lang-en .lang-pt, body.lang-en .lang-es { display: none !important; }
+body.lang-es .lang-pt, body.lang-es .lang-en { display: none !important; }
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:12px 48px;background:transparent;border-bottom:1px solid transparent;transition:padding .3s,background .3s,border-color .3s,box-shadow .3s;}
@@ -286,8 +288,17 @@ footer{background:var(--verde);color:var(--branco);padding:64px 48px 28px;}
 }
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
 </style>
+<script>
+  (function() {
+    const savedLang = localStorage.getItem('casa8-lang') || 'pt';
+    document.documentElement.className = 'lang-' + savedLang;
+  })();
+</script>
 </head>
-<body>
+<body class="lang-pt">
+<script>
+  document.body.className = 'lang-' + (localStorage.getItem('casa8-lang') || 'pt');
+</script>
 
 <a href="https://wa.me/5521982596427" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
 
@@ -770,7 +781,7 @@ footer{background:var(--verde);color:var(--branco);padding:64px 48px 28px;}
         <h3>Hostel Casa 8</h3>
         <p class="addr">📍 Rua das Laranjeiras, 285 — Casa 8<br>Laranjeiras, Rio de Janeiro - RJ</p>
         <div class="dist-list">
-          <div class="dist"><span class="dist-ico">✝️️</span><div class="dist-txt"><strong>Cristo Redentor</strong> — 
+          <div class="dist"><span class="dist-ico">✝</span><div class="dist-txt"><strong>Cristo Redentor</strong> — 
             <span class="lang-pt">acesso conveniente</span><span class="lang-en">convenient access</span><span class="lang-es">acceso conveniente</span>
           </div></div>
           <div class="dist"><span class="dist-ico">🏛️</span><div class="dist-txt"><strong>Museu da República</strong> — 
@@ -1073,7 +1084,7 @@ function toggleFaq(btn){
   if(!isOpen){ans.classList.add('open');btn.classList.add('open');}
 }
 
-/* Lightbox e Galeria - Lógica mantida integralmente */
+/* Lightbox e Galeria */
 var galleryPool=[
     {s:'https://drive.google.com/thumbnail?id=1fxCNewbrDnL2pIth7eXnA4F96-KUwC9T&sz=w1200'},
     {s:'https://drive.google.com/thumbnail?id=1DtaunF9J9dwdFZhIoR20qCREGY2q1_ZF&sz=w1200'},
@@ -1304,15 +1315,11 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   });
 });
 
-/* Lógica Fixo de Traduções Manuais */
+/* Função de Tradução Atualizada */
 function setLanguage(lang) {
   document.documentElement.lang = lang;
-  
-  const allLangElements = document.querySelectorAll('.lang-pt, .lang-en, .lang-es');
-  allLangElements.forEach(el => el.style.display = 'none');
-  
-  const selectedLangElements = document.querySelectorAll('.lang-' + lang);
-  selectedLangElements.forEach(el => el.style.display = '');
+  document.body.className = 'lang-' + lang;
+  localStorage.setItem('casa8-lang', lang);
 
   document.querySelectorAll('.lang-btn').forEach(btn => {
     if(btn.getAttribute('data-lang') === lang) {
@@ -1321,8 +1328,6 @@ function setLanguage(lang) {
       btn.classList.remove('active');
     }
   });
-
-  localStorage.setItem('casa8-lang', lang);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
