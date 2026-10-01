@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hostel Casa 8 — Laranjeiras, Rio de Janeiro</title>
+<meta name="description" content="Hostel Casa 8 em Laranjeiras, Rio de Janeiro. Quartos privativos e compartilhados, ambiente familiar e acesso fácil ao Cristo Redentor e ao metrô.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --creme:#F7F2E8;--creme-d:#EBE3D4;--verde:#1A3A2F;--verde-l:#2A5444;
+  --folha:#4A7C68;--folha-claro:#D5E6DE;--terracota:#C45C3A;--terracota-d:#A4492C;
+  --areia:#D4A574;--branco:#FFFEFA;--cinza:#6B6358;--r:20px;
+  --shadow:0 18px 50px rgba(26,58,47,.12);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Work Sans',sans-serif;background:var(--creme);color:var(--verde);overflow-x:hidden;}
+img{display:block;max-width:100%;}
+a{text-decoration:none;color:inherit;}
+button{font-family:inherit;cursor:pointer;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:12px 48px;background:transparent;border-bottom:1px solid transparent;transition:padding .3s,background .3s,border-color .3s,box-shadow .3s;}
+nav.scrolled{padding:8px 48px;background:rgba(26,58,47,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,254,250,.08);box-shadow:0 4px 28px rgba(26,58,47,.2);}
+nav.scrolled .nav-logo img{height:56px;}
+.nav-logo{display:flex;align-items:center;gap:14px;}
+.nav-logo img{height:72px;width:auto;filter:drop-shadow(0 4px 12px rgba(0,0,0,.2));background:transparent;}
+.nav-logo-text{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.35rem;line-height:1.1;color:var(--branco);}
+.nav-logo-text em{font-style:normal;color:var(--areia);}
+.nav-actions{display:flex;align-items:center;gap:16px;margin-left:auto;}
+.nav-links{display:flex;align-items:center;gap:22px;}
+.nav-links a{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--branco);opacity:.85;transition:.2s;}
+.nav-links a:hover{opacity:1;color:var(--areia);}
+.nav-reserva{background:var(--terracota)!important;color:var(--branco)!important;opacity:1!important;padding:10px 20px;border-radius:50px;}
+.nav-reserva:hover{background:var(--terracota-d)!important;}
+.lang-switch{display:flex;align-items:center;gap:4px;background:rgba(255,254,250,.18);padding:5px 10px;border-radius:50px;border:1px solid rgba(255,254,250,.28);backdrop-filter:blur(8px);flex-shrink:0;}
+.lang-btn{background:none;border:2px solid transparent;border-radius:50%;width:36px;height:36px;padding:0;font-size:1.25rem;line-height:1;cursor:pointer;transition:border-color .2s,transform .2s;}
+.lang-btn:hover{transform:scale(1.08);}
+.lang-btn.active{border-color:var(--areia);box-shadow:0 0 0 2px rgba(212,165,116,.25);}
+#google_translate_element{display:none;}
+body{top:0!important;}
+.goog-te-banner-frame,.skiptranslate,.goog-te-gadget,.goog-te-balloon-frame,#goog-gt-tt{display:none!important;}
+.nav-toggle{display:none;flex-direction:column;gap:5px;}
+.nav-toggle span{width:24px;height:2px;background:var(--branco);border-radius:2px;}
+.nav-drawer{display:none;position:fixed;inset:0;z-index:1100;background:var(--verde);flex-direction:column;align-items:center;justify-content:center;gap:26px;}
+.nav-drawer.open{display:flex;}
+.nav-drawer a{font-family:'Bricolage Grotesque',sans-serif;font-size:1.7rem;color:var(--branco);font-weight:600;}
+.nav-drawer a:hover{color:var(--areia);}
+.drawer-close{position:absolute;top:24px;right:28px;background:none;border:none;color:var(--branco);font-size:1.8rem;}
+
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:900;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 10px 30px rgba(37,211,102,.4);transition:transform .2s;}
+.wa-float:hover{transform:scale(1.08);}
+
+/* HERO */
+#hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;padding:0;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;z-index:0;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,58,47,.15) 0%,rgba(26,58,47,.45) 40%,rgba(26,58,47,.88) 100%);}
+.hero-content{position:relative;z-index:1;max-width:1280px;margin:0 auto;width:100%;padding:140px 48px 72px;color:var(--branco);}
+.hero-eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--areia);margin-bottom:18px;}
+.hero-h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(2.8rem,5.5vw,4.6rem);line-height:1.02;letter-spacing:-.02em;margin-bottom:20px;max-width:720px;}
+.hero-h1 em{font-style:normal;color:var(--areia);}
+.hero-p{font-size:1.08rem;line-height:1.7;opacity:.88;max-width:480px;margin-bottom:32px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:15px 30px;border-radius:50px;font-weight:600;font-size:.92rem;transition:all .22s;}
+.btn-terra{background:var(--terracota);color:var(--branco);}
+.btn-terra:hover{background:var(--terracota-d);transform:translateY(-2px);box-shadow:0 10px 28px rgba(196,92,58,.35);}
+.btn-out{border:1.5px solid rgba(255,254,250,.7);color:var(--branco);}
+.btn-out:hover{background:var(--branco);color:var(--verde);}
+.btn-verde{background:var(--verde);color:var(--branco);}
+.btn-verde:hover{background:var(--verde-l);transform:translateY(-2px);}
+.btn-terra-out{border:1.5px solid var(--verde);color:var(--verde);}
+.btn-terra-out:hover{background:var(--verde);color:var(--branco);}
+
+.stats-band{background:var(--verde);padding:26px 48px;}
+.stats-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;}
+.stat-item{display:flex;align-items:center;gap:10px;color:var(--branco);}
+.stat-text strong{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:.95rem;color:var(--areia);}
+.stat-text span{font-size:.76rem;opacity:.65;}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.r-d1{transition-delay:.1s;}.r-d2{transition-delay:.2s;}.r-d3{transition-delay:.3s;}.r-d4{transition-delay:.4s;}
+
+section{padding:96px 48px;}
+.s-inner{max-width:1280px;margin:0 auto;}
+.eyebrow{font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--folha);margin-bottom:14px;}
+.h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(2rem,3.6vw,3rem);letter-spacing:-.02em;line-height:1.08;}
+.h2 em{font-style:normal;color:var(--terracota);}
+.sub{color:var(--cinza);font-size:1rem;line-height:1.7;max-width:560px;margin-top:16px;}
+
+/* SOBRE */
+#sobre{background:var(--branco);}
+.sobre-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center;margin-top:56px;}
+.sobre-imgs{position:relative;height:520px;}
+.sobre-img-a{position:absolute;top:0;left:0;width:78%;height:72%;object-fit:cover;border-radius:28px;box-shadow:var(--shadow);}
+.sobre-img-b{position:absolute;bottom:0;right:0;width:58%;height:52%;object-fit:cover;object-position:center;background:#FFFBEF;padding:0;border-radius:28px;box-shadow:var(--shadow);border:6px solid var(--branco);}
+.sobre-tags{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 32px;}
+.tag{background:var(--folha-claro);color:var(--verde-l);padding:8px 17px;border-radius:50px;font-size:.8rem;font-weight:600;}
+
+/* QUARTOS */
+#quartos{background:var(--creme-d);}
+.q-header{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:48px;}
+.rooms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.room{background:var(--branco);border-radius:var(--r);overflow:hidden;transition:transform .3s,box-shadow .3s;}
+.room:hover{transform:translateY(-6px);box-shadow:var(--shadow);}
+.room.feat{grid-column:span 2;}
+.room-img{position:relative;overflow:hidden;background:var(--creme-d);}
+.room:not(.feat) .room-img{aspect-ratio:4/3;}
+.room.feat .room-img{aspect-ratio:16/9;}
+.room-img > img{width:100%;height:100%;object-fit:cover;}
+.room-slider{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;}
+.room-slides{display:flex;height:100%;transition:transform .4s ease;will-change:transform;cursor:pointer;}
+.room-slide{flex:0 0 100%;width:100%;height:100%;min-width:0;}
+.room-slide img{display:block;width:100%;height:100%;object-fit:cover;background:var(--creme-d);}
+/* room arrows enabled below */
+.slide-dots-r{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:5px;z-index:10;}
+.sdot{width:6px;height:6px;border-radius:50%;background:rgba(255,254,250,.5);border:none;cursor:pointer;transition:.2s;padding:0;}
+.sdot.active{background:var(--branco);transform:scale(1.3);}
+.slide-counter{position:absolute;top:12px;right:12px;background:rgba(26,58,47,.62);color:var(--branco);font-size:.65rem;font-weight:600;padding:3px 9px;border-radius:20px;z-index:10;pointer-events:none;}
+.room-tag{position:absolute;top:14px;left:14px;background:var(--verde);color:var(--branco);font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 13px;border-radius:50px;z-index:11;}
+.room-tag.terra{background:var(--terracota);}
+.room-tag.areia{background:var(--areia);color:var(--verde);}
+.room-body{padding:22px;}
+.room-name{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.18rem;margin-bottom:8px;}
+.room-desc{color:var(--cinza);font-size:.86rem;line-height:1.6;margin-bottom:16px;}
+.room-feats{display:flex;flex-wrap:wrap;gap:7px 14px;margin-bottom:18px;}
+.rf{font-size:.76rem;color:var(--cinza);font-weight:500;display:flex;align-items:center;gap:5px;}
+.rf::before{content:'✓';color:var(--folha);font-weight:700;}
+.room-foot{padding-top:16px;border-top:1px solid var(--creme-d);}
+.btn-room{background:var(--verde);color:var(--branco);padding:9px 19px;border-radius:50px;font-size:.78rem;font-weight:600;display:inline-block;transition:.2s;}
+.btn-room:hover{background:var(--terracota);transform:scale(1.05);}
+
+/* GALERIA */
+#galeria{background:var(--branco);}
+
+.f-brand-logo{display:none;}
+.gal-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:200px;gap:14px;margin-top:48px;}
+.gal-item{border-radius:18px;overflow:hidden;cursor:pointer;position:relative;}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .45s;}
+.gal-item:hover img{transform:scale(1.06);}
+.gal-item.big{grid-row:span 2;}
+.gal-item.more{background:var(--verde);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--branco);transition:background .25s,transform .25s;}
+.gal-item.more:hover{background:var(--verde-l);transform:translateY(-2px);}
+.gal-item.more::after{display:none!important;}
+.gal-more-plus{font-family:'Bricolage Grotesque',sans-serif;font-size:3.2rem;font-weight:700;line-height:1;}
+.gal-more-label{font-size:.82rem;font-weight:600;text-align:center;opacity:.85;line-height:1.35;}
+
+.gal-item::after{content:'🔍';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(26,58,47,0);font-size:1.4rem;opacity:0;transition:.25s;}
+.gal-item:hover::after{background:rgba(26,58,47,.28);opacity:1;}
+.lightbox{position:fixed;inset:0;z-index:4000;background:rgba(26,58,47,.94);display:none;align-items:center;justify-content:center;padding:48px;}
+.lightbox.open{display:flex;}
+.lb-stage{position:relative;z-index:4001;max-width:90vw;max-height:84vh;display:flex;flex-direction:column;align-items:center;gap:14px;}
+.lightbox img,.lb-stage img{max-width:90vw;max-height:76vh;border-radius:14px;box-shadow:0 30px 80px rgba(0,0,0,.5);object-fit:contain;}
+.lb-counter{color:rgba(255,254,250,.85);font-size:.9rem;font-weight:600;letter-spacing:.04em;}
+.lb-close,.lb-prev,.lb-next{position:fixed;z-index:4002;background:rgba(255,254,250,.18);color:var(--branco);border:none;width:52px;height:52px;border-radius:50%;font-size:1.4rem;display:flex;align-items:center;justify-content:center;transition:.2s;cursor:pointer;}
+.lb-close:hover,.lb-prev:hover,.lb-next:hover{background:var(--terracota);}
+.lb-close{top:24px;right:24px;}.lb-prev{left:24px;top:50%;transform:translateY(-50%);}.lb-next{right:24px;top:50%;transform:translateY(-50%);}
+body.lb-open{overflow:hidden;}
+
+.gal-modal{position:fixed;inset:0;z-index:3500;background:rgba(26,58,47,.88);display:none;align-items:center;justify-content:center;padding:24px;}
+.gal-modal.open{display:flex;}
+.gal-modal-panel{background:var(--creme);border-radius:22px;width:min(1100px,96vw);max-height:90vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 30px 80px rgba(0,0,0,.35);}
+.gal-modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:22px 24px 12px;border-bottom:1px solid rgba(26,58,47,.1);}
+.gal-modal-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terracota);margin-bottom:4px;}
+.gal-modal-title{font-family:'Bricolage Grotesque',sans-serif;font-size:1.35rem;color:var(--verde);font-weight:700;}
+.gal-modal-close{width:42px;height:42px;border-radius:50%;border:none;background:var(--verde);color:var(--branco);font-size:1.05rem;cursor:pointer;flex-shrink:0;}
+.gal-modal-close:hover{background:var(--terracota);}
+.gal-modal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:18px 24px 24px;overflow-y:auto;}
+.gal-modal-grid button{border:none;padding:0;border-radius:12px;overflow:hidden;cursor:pointer;aspect-ratio:1;background:var(--creme-d);}
+.gal-modal-grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s;}
+.gal-modal-grid button:hover img{transform:scale(1.05);}
+@media(max-width:720px){.gal-modal-grid{grid-template-columns:repeat(2,1fr);}}
+body.gal-modal-open{overflow:hidden;}
+.slide-prev,.slide-next{position:absolute;top:50%;transform:translateY(-50%);z-index:12;width:38px;height:38px;border-radius:50%;border:none;background:rgba(26,58,47,.55);color:#fff;font-size:1.25rem;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transition:opacity .2s,background .2s;}
+.room-img:hover .slide-prev,.room-img:hover .slide-next,.room-slider:hover .slide-prev,.room-slider:hover .slide-next{opacity:1;}
+.slide-prev{left:10px;}.slide-next{right:10px;}
+.slide-prev:hover,.slide-next:hover{background:var(--terracota);}
+
+
+/* REVIEWS */
+#reviews{background:var(--creme-d);overflow:hidden;}
+.rev-wrap{overflow:hidden;margin-top:48px;}
+.rev-track{display:flex;gap:22px;transition:transform .5s ease;}
+.rev-card{flex:0 0 calc(33.333% - 15px);background:var(--branco);border-radius:var(--r);padding:30px;min-width:0;}
+.rev-stars{color:var(--areia);margin-bottom:14px;letter-spacing:2px;}
+.rev-text{font-size:.92rem;line-height:1.7;color:var(--verde);margin-bottom:20px;font-style:italic;}
+.rev-author{display:flex;align-items:center;gap:12px;}
+.rev-av{width:40px;height:40px;border-radius:50%;background:var(--folha);color:var(--branco);display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Bricolage Grotesque',sans-serif;}
+.rev-name{font-weight:700;font-size:.86rem;}
+.rev-origin{font-size:.74rem;color:var(--cinza);}
+.rev-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:28px;}
+.rev-arrow{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--verde);background:transparent;color:var(--verde);font-size:1.2rem;display:flex;align-items:center;justify-content:center;transition:.2s;}
+.rev-arrow:hover{background:var(--verde);color:var(--branco);}
+.rev-dots{display:flex;gap:9px;}
+.rdot{width:8px;height:8px;border-radius:50%;background:var(--creme);border:none;transition:.25s;padding:0;}
+.rdot.active{background:var(--terracota);transform:scale(1.3);}
+
+/* LOCALIZAÇÃO */
+#loc{background:var(--branco);}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;margin-top:52px;}
+.loc-info h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.5rem;margin-bottom:6px;}
+.loc-info .addr{color:var(--cinza);font-size:.92rem;margin-bottom:26px;}
+.dist-list{display:flex;flex-direction:column;gap:10px;}
+.dist{display:flex;align-items:center;gap:14px;background:var(--creme);padding:14px 18px;border-radius:14px;}
+.dist-ico{font-size:1.3rem;}
+.dist-txt{font-size:.85rem;color:var(--cinza);}
+.dist-txt strong{color:var(--verde);font-weight:700;}
+.loc-cta{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap;}
+.btn-mata{background:var(--folha);color:var(--branco);padding:12px 24px;border-radius:50px;font-size:.86rem;font-weight:600;display:inline-flex;align-items:center;gap:8px;transition:.2s;}
+.btn-mata:hover{background:var(--verde-l);transform:translateY(-2px);}
+.btn-out-dark{border:1.5px solid var(--verde);color:var(--verde);padding:11px 24px;border-radius:50px;font-size:.86rem;font-weight:600;display:inline-flex;align-items:center;gap:8px;transition:.2s;}
+.btn-out-dark:hover{background:var(--verde);color:var(--branco);}
+.map-wrap{border-radius:var(--r);overflow:hidden;height:400px;box-shadow:var(--shadow);}
+.map-wrap iframe{width:100%;height:100%;border:0;}
+
+/* FAQ */
+#faq{background:var(--creme-d);}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px 56px;margin-top:52px;}
+.faq-cat{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:.95rem;color:var(--verde);margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--creme);}
+.faq-item{border-bottom:1px solid rgba(26,58,47,.1);}
+.faq-q{width:100%;text-align:left;background:none;border:none;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 0;font-size:.9rem;font-weight:600;color:var(--verde);cursor:pointer;transition:color .2s;}
+.faq-q:hover{color:var(--terracota);}
+.faq-icon{flex-shrink:0;width:26px;height:26px;border-radius:50%;border:1.5px solid rgba(26,58,47,.15);display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:400;color:var(--cinza);transition:all .3s;line-height:1;}
+.faq-q.open .faq-icon{background:var(--terracota);border-color:var(--terracota);color:var(--branco);transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease;font-size:.87rem;color:var(--cinza);line-height:1.7;}
+.faq-a.open{max-height:320px;padding-bottom:16px;}
+.faq-a strong{color:var(--verde);}
+
+.cta-band{background:var(--terracota);padding:56px 48px;position:relative;overflow:hidden;}
+.cta-blob{position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,254,250,.08);}
+.cta-blob.b1{top:-120px;left:-60px;}.cta-blob.b2{bottom:-140px;right:-80px;}
+.cta-inner{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;position:relative;z-index:1;}
+.cta-txt h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:2.1rem;color:var(--branco);margin-bottom:6px;}
+.cta-txt p{color:rgba(255,254,250,.85);font-size:.95rem;}
+.cta-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-branco{background:var(--branco);color:var(--terracota);padding:14px 28px;border-radius:50px;font-weight:600;transition:.2s;}
+.btn-branco:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,.15);}
+.btn-branco-out{border:1.5px solid rgba(255,254,250,.8);color:var(--branco);padding:13px 28px;border-radius:50px;font-weight:600;transition:.2s;}
+.btn-branco-out:hover{background:rgba(255,254,250,.15);}
+
+footer{background:var(--verde);color:var(--branco);padding:64px 48px 28px;}
+.f-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;}
+.f-logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:1.4rem;margin-bottom:12px;}
+.f-logo em{font-style:normal;color:var(--areia);}
+.f-brand p{font-size:.88rem;opacity:.65;line-height:1.7;max-width:280px;}
+.f-soc{display:flex;gap:10px;margin-top:20px;}
+.soc-btn{width:40px;height:40px;border-radius:50%;background:rgba(255,254,250,.1);display:flex;align-items:center;justify-content:center;transition:.2s;}
+.soc-btn:hover{background:var(--terracota);}
+.f-col h4{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px;opacity:.5;}
+.f-col ul{list-style:none;}
+.f-col li{margin-bottom:10px;font-size:.88rem;opacity:.75;}
+.f-col a:hover{opacity:1;color:var(--areia);}
+.f-bottom{max-width:1280px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(255,254,250,.1);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.78rem;opacity:.5;}
+
+@media(max-width:1024px){
+  nav{padding:10px 24px;}
+  .nav-logo img{height:58px;}
+  nav.scrolled .nav-logo img{height:48px;}
+  .nav-links{display:none;}
+  .nav-toggle{display:flex;}
+  section{padding:72px 24px;}
+  .hero-content{padding:120px 24px 56px;}
+  .sobre-grid,.loc-grid,.faq-grid{grid-template-columns:1fr;gap:36px;}
+  .sobre-imgs{height:380px;}
+  .rooms-grid{grid-template-columns:1fr 1fr;}
+  .room.feat{grid-column:span 2;}
+  .gal-grid{grid-template-columns:1fr 1fr;grid-auto-rows:180px;}
+  .gal-item.big{grid-column:span 2;grid-row:span 1;}
+  .rev-card{flex:0 0 calc(50% - 11px);}
+  .f-grid{grid-template-columns:1fr 1fr;}
+  .stats-band{padding:22px 24px;}
+  .cta-band{padding:48px 24px;}
+  footer{padding:48px 24px 24px;}
+}
+@media(max-width:640px){
+  .rooms-grid{grid-template-columns:1fr;}.room.feat{grid-column:auto;}
+  .rev-card{flex:0 0 100%;}
+  .f-grid{grid-template-columns:1fr;}
+  .cta-inner{flex-direction:column;text-align:center;}
+  .stats-inner{flex-direction:column;align-items:flex-start;}
+  .f-bottom{flex-direction:column;text-align:center;}
+  .lang-btn{width:32px;height:32px;font-size:1.1rem;}
+}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+</style>
+</head>
+<body>
+
+<a href="https://wa.me/5521982596427" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <img src="casa8-logo.png" alt="Hostel Casa 8">
+    <span class="nav-logo-text">Casa <em>8</em></span>
+  </a>
+  <div id="google_translate_element" aria-hidden="true"></div>
+  <div class="nav-actions">
+    <div class="lang-switch" aria-label="Idioma">
+      <button type="button" class="lang-btn active" data-lang="pt" title="Português" aria-label="Português">🇧🇷</button>
+      <button type="button" class="lang-btn" data-lang="en" title="English" aria-label="English">🇺🇸</button>
+      <button type="button" class="lang-btn" data-lang="es" title="Español" aria-label="Español">🇪🇸</button>
+    </div>
+    <div class="nav-links">
+      <a href="#sobre">O Hostel</a>
+      <a href="#quartos">Quartos</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#reviews">Depoimentos</a>
+      <a href="#faq">FAQ</a>
+      <a href="#loc">Localização</a>
+      <a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" target="_blank" rel="noopener" class="nav-reserva">🗓 Reservar</a>
+    </div>
+    <div class="nav-toggle" id="navToggle" onclick="toggleDrawer()" aria-label="Menu"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="nav-drawer" id="navDrawer">
+  <button class="drawer-close" onclick="toggleDrawer()" aria-label="Fechar">✕</button>
+  <a href="#sobre" onclick="toggleDrawer()">O Hostel</a>
+  <a href="#quartos" onclick="toggleDrawer()">Quartos</a>
+  <a href="#galeria" onclick="toggleDrawer()">Galeria</a>
+  <a href="#reviews" onclick="toggleDrawer()">Depoimentos</a>
+  <a href="#faq" onclick="toggleDrawer()">FAQ</a>
+  <a href="#loc" onclick="toggleDrawer()">Localização</a>
+  <a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" target="_blank" rel="noopener" style="background:var(--terracota);padding:13px 30px;border-radius:50px;font-size:1.05rem;color:var(--branco);">🗓 Reservar</a>
+</div>
+
+<section id="hero">
+  <div class="hero-bg">
+    <img src="https://static.wixstatic.com/media/c74c33_67e248620d304bcd8017f02584cc782a~mv2.jpg" alt="Quarto aconchegante no Hostel Casa 8">
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow reveal">Hostel · Laranjeiras · Rio de Janeiro</div>
+    <h1 class="hero-h1 reveal r-d1">Mais do que hospedagem,<br>seu <em>lar</em> no Rio</h1>
+    <p class="hero-p reveal r-d2">No coração de Laranjeiras, a Casa 8 oferece acomodações tropicais, ambiente familiar e acesso fácil ao Cristo Redentor e ao transporte da cidade.</p>
+    <div class="hero-btns reveal r-d3">
+      <a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" class="btn btn-terra" target="_blank" rel="noopener">🗓 Reservar Online →</a>
+      <a href="#quartos" class="btn btn-out">Ver Quartos</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats-band">
+  <div class="stats-inner">
+    <div class="stat-item reveal"><span style="font-size:1.3rem">✝️</span><div class="stat-text"><strong>~3 km</strong><span>do Cristo Redentor</span></div></div>
+    <div class="stat-item reveal r-d1"><span style="font-size:1.3rem">🚇</span><div class="stat-text"><strong>Fácil acesso</strong><span>a ônibus e metrô</span></div></div>
+    <div class="stat-item reveal r-d2"><span style="font-size:1.3rem">🌳</span><div class="stat-text"><strong>Laranjeiras</strong><span>bairro residencial</span></div></div>
+    <div class="stat-item reveal r-d3"><span style="font-size:1.3rem">🏖️</span><div class="stat-text"><strong>~20 min</strong><span>de Copacabana</span></div></div>
+    <div class="stat-item reveal r-d4"><span style="font-size:1.3rem">🏡</span><div class="stat-text"><strong>Ambiente</strong><span>familiar e tranquilo</span></div></div>
+  </div>
+</div>
+
+<section id="sobre">
+  <div class="s-inner">
+    <div class="sobre-grid">
+      <div class="sobre-imgs reveal">
+        <img class="sobre-img-a" src="https://static.wixstatic.com/media/c74c33_48b1c0fe5ba9499aaa5cf687b0487e26~mv2.jpg" alt="Ambiente Casa 8" loading="lazy">
+        <img class="sobre-img-b" src="casa8-logo-creme.png" alt="Logo Hostel Casa 8" loading="lazy">
+      </div>
+      <div>
+        <div class="eyebrow reveal">Sobre nós</div>
+        <h2 class="h2 reveal r-d1">Boas-vindas à<br>sua <em>Casa 8</em></h2>
+        <p class="sub reveal r-d2">O Hostel Casa 8, em Laranjeiras, oferece acomodações aconchegantes e tropicais: quartos duplos privativos (Standard, Premium e Deluxe), quarto familiar e compartilhado.</p>
+        <p class="reveal r-d3" style="color:var(--cinza);font-size:.96rem;line-height:1.75;margin-top:16px;max-width:560px;">Nossa localização facilita o acesso ao Cristo Redentor e ao transporte pela cidade. O objetivo é um ambiente tranquilo e familiar para você relaxar.</p>
+        <div class="sobre-tags reveal r-d3">
+          <span class="tag">🏠 Ambiente familiar</span>
+          <span class="tag">🌴 Clima tropical</span>
+          <span class="tag">📍 Laranjeiras</span>
+          <span class="tag">🛏️ Privativos & dorms</span>
+        </div>
+        <a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" target="_blank" rel="noopener" class="btn btn-terra reveal r-d4">🗓 Simular Reserva →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="quartos">
+  <div class="s-inner">
+    <div class="q-header">
+      <div>
+        <div class="eyebrow reveal">Acomodações</div>
+        <h2 class="h2 reveal r-d1">Um quarto pra<br>cada <em>jeito de ficar</em></h2>
+      </div>
+      <a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" class="btn btn-terra reveal r-d2" target="_blank" rel="noopener">🗓 Reservar</a>
+    </div>
+    <div class="rooms-grid">
+
+      <div class="room feat reveal">
+        <div class="room-img">
+          <div class="room-slider" data-slider data-room="suiteDeluxe">
+            <div class="room-slides">
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=12CRa0S1fn_SOmJHeLuUrb8ziWmH4TX6f&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1hO0y0zZKdME_8nlkfHuo6yqFuWYFA-e7&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1o-FpuSXPdnEoYG7Tvj2AVtok-QcNYkSf&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1CwP_45IEcvYNcz7O3Gtlpf1y9RkkBnHK&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1WmoP_-2Ey_m5suDjw5sDyZfEW4EPSa1n&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1RyxsQ9oOKeF197fv6ihRhOdmFhL1kJ1L&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1bzdOxhtz2_GoPtAZHfZ52o2_uTwAo7mE&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1e-RwP7r-88wsAzLDFnDtDRcJe2dt1XA3&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=14Z312gQfKzGKFA0ZyQQcn1VWxk4GTxJn&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=17K8WUquT6H46ybftWeB4HuijRdgsLeYx&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1UUc0OFebyEHmgey6Z5CM_fPF3npvNJTE&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1rDtVtem8INEjzIfswllrhpC-4L23B-vJ&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1BvYhpnmdZTkOphpeCWnFaBW2LKkF64Jd&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1JtR521oxlcZfSrHgDn6gdpYjO6-wWXaY&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=17cH8DFC8DLXPKV1oIE4beo9Hb9frmbgv&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1CBuVvHkxNFbL170AAOgA8rXyy_LxMTto&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1LsGxRUKR3ScmGcYn7uCPVxjVo0o9xKjK&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1UTkNssQP0hXDxQ6sxSX9gM6XA2mclESg&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1pgw7WTFVvRgL7Z78UyXl98SsnmYAiMaq&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1yLLFV2-KcQ6tCyGbdtgH3JxqEoTE_U3C&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
+            </div>
+            <button type="button" class="slide-prev" aria-label="Anterior">‹</button>
+            <button type="button" class="slide-next" aria-label="Próximo">›</button>
+            <div class="slide-dots-r"></div>
+            <span class="slide-counter">1 / 20</span>
+          </div>
+          <span class="room-tag terra">Deluxe</span>
+        </div>
+        <div class="room-body">
+          <h3 class="room-name">Suíte Deluxe</h3>
+          <p class="room-desc">O quarto mais especial da casa: aconchego, luz natural, banheiro próprio e detalhes tropicais para casais que querem conforto total.</p>
+          <div class="room-feats"><span class="rf">Cama de casal</span><span class="rf">Banheiro próprio</span><span class="rf">Privativo</span><span class="rf">Até 2 pessoas</span></div>
+          <div class="room-foot"><a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" class="btn-room" target="_blank" rel="noopener">Reservar →</a></div>
+        </div>
+      </div>
+
+      <div class="room reveal r-d1">
+        <div class="room-img">
+          <div class="room-slider" data-slider data-room="casalPremium">
+            <div class="room-slides">
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1f9PVm4ZsKN72L2V78ELOJFyXSjvCAZzT&sz=w1200" alt="Casal Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1UpdTM5LvHOKp7sqLYv6Qep5P2Hdg_eDv&sz=w1200" alt="Casal Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1Bo4jLSo9UzsivQJXFG7vLwsms7Uu9a6B&sz=w1200" alt="Casal Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1ZkruII7iyfAm398IcegeuBqkQr0qduI_&sz=w1200" alt="Casal Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=12ZB-gZBsYEi8QzqNUB_FMXNEb8ANgrqI&sz=w1200" alt="Casal Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1-1JpcP7AFDYAFjAyzj9Tn6Bb7Q6z0KAH&sz=w1200" alt="Casal Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1bHCS_Mh2LE_X4gZfCR_TjAFaDeXqD3RF&sz=w1200" alt="Casal Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=19FUjTibbz2Dhjdg_JcVk9qqdmBubVpx7&sz=w1200" alt="Casal Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1M_ZRhtlCNNIw2e9Eg0CFLSsQfh0hPVtT&sz=w1200" alt="Casal Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=154YzTuqLVaeSVstlPGlUi0CHQUYrq9sr&sz=w1200" alt="Casal Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1JWiVrY3HR_8WuenwUNPyYzxUa4ppSQsG&sz=w1200" alt="Casal Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1D6ujQlINfJ-Gzl0u-9fVXokvh3gIQfOq&sz=w1200" alt="Casal Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=19ddWsHJMvOU1mL5Ox-gueYKAKIDnRC6j&sz=w1200" alt="Casal Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1DKrq2AY-9jjoDq7GdqREme7LSAEnYkNf&sz=w1200" alt="Casal Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=16KYMLdqpYPeCxAJzO6rLZsOUqgmdFW3o&sz=w1200" alt="Casal Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1EOknUNGfcUot46c4XPba-Hl0C7fdZhdl&sz=w1200" alt="Casal Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=18Lv_36F716NACVUHEUbSTqk77-X6ySDf&sz=w1200" alt="Casal Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1dmOSAiKk6YPSEmbmuf3Tc-VghGhodUgr&sz=w1200" alt="Casal Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1AqWp-SY49v29Ua0UNoIGyzjoMbD0L67J&sz=w1200" alt="Casal Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1Cqxjiq0ECDkYNZYVes4C374tdMLBMQOo&sz=w1200" alt="Casal Premium" loading="lazy"></div>
+            </div>
+            <button type="button" class="slide-prev" aria-label="Anterior">‹</button>
+            <button type="button" class="slide-next" aria-label="Próximo">›</button>
+            <div class="slide-dots-r"></div>
+            <span class="slide-counter">1 / 20</span>
+          </div>
+          <span class="room-tag">Premium</span>
+        </div>
+        <div class="room-body">
+          <h3 class="room-name">Duplo Privativo Premium</h3>
+          <p class="room-desc">Privacidade e conforto em um ambiente tropical bem cuidado, ideal para casais.</p>
+          <div class="room-feats"><span class="rf">Cama de casal</span><span class="rf">Privativo</span><span class="rf">Até 2 pessoas</span></div>
+          <div class="room-foot"><a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" class="btn-room" target="_blank" rel="noopener">Reservar →</a></div>
+        </div>
+      </div>
+
+      <div class="room reveal r-d2">
+        <div class="room-img">
+          <div class="room-slider" data-slider data-room="casalStandard">
+            <div class="room-slides">
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1IfnTTtc_EoYVxLds8vCAyUMkrwxy7mUY&sz=w1200" alt="Casal Standard" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1Qq2Cr6i5eNBosd3fK5dHtpR-_wOTMBDw&sz=w1200" alt="Casal Standard" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1njm5wgSwQK1Yovqm9Iv3v4hrseBrhz_X&sz=w1200" alt="Casal Standard" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1Ysv28Pq9Qqk7JWVuH698ZwRohF22bB-P&sz=w1200" alt="Casal Standard" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=15ZM9wcrHhZ4jL68GfUB5L0d2kiiaHUUB&sz=w1200" alt="Casal Standard" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=16HCew7gzq6sZL_DB_AZUQ-VSveZ6XDWb&sz=w1200" alt="Casal Standard" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1WYhC4kHUZbtBN7GxG1jblAE_pFnweS96&sz=w1200" alt="Casal Standard" loading="lazy"></div>
+            </div>
+            <button type="button" class="slide-prev" aria-label="Anterior">‹</button>
+            <button type="button" class="slide-next" aria-label="Próximo">›</button>
+            <div class="slide-dots-r"></div>
+            <span class="slide-counter">1 / 7</span>
+          </div>
+          <span class="room-tag areia">Standard</span>
+        </div>
+        <div class="room-body">
+          <h3 class="room-name">Duplo Privativo Standard</h3>
+          <p class="room-desc">Opção prática e aconchegante para quem busca privacidade com ótimo custo-benefício.</p>
+          <div class="room-feats"><span class="rf">Cama de casal</span><span class="rf">Privativo</span><span class="rf">Até 2 pessoas</span></div>
+          <div class="room-foot"><a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" class="btn-room" target="_blank" rel="noopener">Reservar →</a></div>
+        </div>
+      </div>
+
+      <div class="room reveal r-d1">
+        <div class="room-img">
+          <div class="room-slider" data-slider data-room="familiaPremium">
+            <div class="room-slides">
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1OYPo4NkbrY3arqpqpg9QOtE6Uo3suI48&sz=w1200" alt="Família Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=17PpOsTE0K8hMaMMUT5Ze9m-VM1Lw9-x6&sz=w1200" alt="Família Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1mRX6GA-1ljFJAANlSwUKJYHnY8YvwoeO&sz=w1200" alt="Família Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1lNfTZmEbm1UPllMIDLO2j51O7iRWY1Zg&sz=w1200" alt="Família Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1ZY3UKLpoCxt6QMueWUtdGN29RQoSSKHE&sz=w1200" alt="Família Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1HNNSRH2osb3hMAuotgzRrsotgbEnDg19&sz=w1200" alt="Família Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1rm5TVNZ5TBSuiLV8XvjuAvCxWPFQlE1_&sz=w1200" alt="Família Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1x7W5xNCkQaau2ba-0V_h5OVYVqot2tzd&sz=w1200" alt="Família Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1gq-RqXFfsNzlJgT5Pas0ZOjS9mD1Nheq&sz=w1200" alt="Família Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1Y_qaYr0A3vKcBuZ07UUNnPMq0mEOsPyF&sz=w1200" alt="Família Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1f8MtVg1YJoxzBZ5HpvAdjgvjGYHJOIUy&sz=w1200" alt="Família Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1liRjZi4bUMfHDKhDx3IQ6xJOAl9O9jVt&sz=w1200" alt="Família Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1DWpFMBEXdDLlocEE1PTQhGY2JU1lrUUl&sz=w1200" alt="Família Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1wBd3Ulq8PTC3cPxeEpI_PDx8IA_pA8hW&sz=w1200" alt="Família Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1p4m2pQioyPITAL2N9zAcsXgV_4cvLwtE&sz=w1200" alt="Família Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=13ZcBthKX0fC5XE4amJ_gS4FlD_3c_rpr&sz=w1200" alt="Família Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1ZDV6eDdBOs3qmo1JZ0HSbbK3CFzdRtsY&sz=w1200" alt="Família Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1a3XJUi1RONem4yuw0ucd8G_BTWfY4iZ2&sz=w1200" alt="Família Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1v0gjf_4dVRKUTZu2OXgjigAomhcg71Hs&sz=w1200" alt="Família Premium" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=18cO77hgdd3IGrkc-t7MhUpAeDeCzPzuq&sz=w1200" alt="Família Premium" loading="lazy"></div>
+            </div>
+            <button type="button" class="slide-prev" aria-label="Anterior">‹</button>
+            <button type="button" class="slide-next" aria-label="Próximo">›</button>
+            <div class="slide-dots-r"></div>
+            <span class="slide-counter">1 / 20</span>
+          </div>
+          <span class="room-tag">Família Premium</span>
+        </div>
+        <div class="room-body">
+          <h3 class="room-name">Família Premium</h3>
+          <p class="room-desc">Espaço pensado para famílias e grupos pequenos que querem ficar juntos com conforto.</p>
+          <div class="room-feats"><span class="rf">Privativo</span><span class="rf">Ideal para família</span><span class="rf">Espaçoso</span></div>
+          <div class="room-foot"><a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" class="btn-room" target="_blank" rel="noopener">Reservar →</a></div>
+        </div>
+      </div>
+
+      <div class="room reveal r-d2">
+        <div class="room-img">
+          <div class="room-slider" data-slider data-room="compartilhado">
+            <div class="room-slides">
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1wC1aU3NM2ddEbFC1JrgVB0Lo-_wFb4MC&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1Tk5ta8yCG-BDnDit7UjQ8mpfuqBHc3YK&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1uDO2l0sOWKA5dKNadtLFjNK528nv3Xq4&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=18nxthd_0FaFJkY9VBsGkY8oyXQ8jyh0q&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1hl68qz6Lvw5tfosV4Agf8apQFuzIxclh&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1FNQDPqPz0W813YcXk5Vq1Av35DczJGzp&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=16iyz882_RWeqSJV51iw3UuHMRqHoFWkb&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1XQ8onhkpEVR2yd-3nm8Y_nJQhQLv5o0e&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1eRQV1sF7eRw6nvTPjnipqmD2pHi5LXAF&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1hsx8_wo596_-7Ipne2G3Z50FQeJbrTqQ&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=105TCZ-kGFY2C1r6l4yJIDkXR9gOd3vGH&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1Y6SxVE3Tuiv5ndj1zm5SWUdUp6p5uLYk&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1kMmCISRlNdpup3MEt0lUmgWQffAI64Sv&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1ZJ6TRmXr8HXmlvFQqwe_sbrFJQ4v-CJw&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=10NrI_HWxtL4dinowp-wBku2Jv0bsnont&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1ftugF-y5WvaTg_ovDdwkjNAVr2h2pY-2&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1Lxdudt8Uw1svtxBo9Y8vlLHPbpw2FwuY&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1XV8luTN3H1x8HVzjiImj5s5AupWByElk&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1og2rjI9g3Xq6TqBf9W-iaaye77wHwn8L&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
+              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1PpmG59IuBrBmN-cxi-bPX5NGZmUcg0Jk&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
+            </div>
+            <button type="button" class="slide-prev" aria-label="Anterior">‹</button>
+            <button type="button" class="slide-next" aria-label="Próximo">›</button>
+            <div class="slide-dots-r"></div>
+            <span class="slide-counter">1 / 20</span>
+          </div>
+          <span class="room-tag areia">Dorm</span>
+        </div>
+        <div class="room-body">
+          <h3 class="room-name">Quarto Compartilhado</h3>
+          <p class="room-desc">Perfeito para quem viaja sozinho e quer conhecer gente nova. Conta com banheiro próprio no quarto.</p>
+          <div class="room-feats"><span class="rf">Compartilhado</span><span class="rf">Banheiro próprio</span><span class="rf">Ambiente social</span></div>
+          <div class="room-foot"><a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" class="btn-room" target="_blank" rel="noopener">Reservar →</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="s-inner">
+    <div class="eyebrow reveal">Nosso espaço</div>
+    <h2 class="h2 reveal r-d1">Detalhes que fazem<br>você se <em>sentir em casa</em></h2>
+    <div class="gal-grid">
+      <div class="gal-item big reveal" onclick="openLB(0)"><img src="https://drive.google.com/thumbnail?id=1fxCNewbrDnL2pIth7eXnA4F96-KUwC9T&sz=w1200" alt="Área comum Casa 8" loading="lazy"></div>
+      <div class="gal-item reveal r-d2" onclick="openLB(1)"><img src="https://drive.google.com/thumbnail?id=1DtaunF9J9dwdFZhIoR20qCREGY2q1_ZF&sz=w1200" alt="Área comum Casa 8" loading="lazy"></div>
+      <div class="gal-item reveal r-d3" onclick="openLB(2)"><img src="https://drive.google.com/thumbnail?id=1vGjFH4sy33pnqDIyhWOV5Ri0tD4kIY1q&sz=w1200" alt="Área comum Casa 8" loading="lazy"></div>
+      <div class="gal-item reveal r-d1" onclick="openLB(3)"><img src="https://drive.google.com/thumbnail?id=1z-g6LFVUXf_QRxG2i-2EVwGBJo6TrDGV&sz=w1200" alt="Área comum Casa 8" loading="lazy"></div>
+      <div class="gal-item reveal r-d2" onclick="openLB(4)"><img src="https://drive.google.com/thumbnail?id=1mvg9lw-1l-cXs5GY56TJDQ-9-dF-_7J6&sz=w1200" alt="Área comum Casa 8" loading="lazy"></div>
+      <div class="gal-item reveal r-d3" onclick="openLB(5)"><img src="https://drive.google.com/thumbnail?id=1MHUvxsQsglKQ3RhRHR7lfsLnV3jz-P40&sz=w1200" alt="Área comum Casa 8" loading="lazy"></div>
+      <div class="gal-item reveal r-d1" onclick="openLB(6)"><img src="https://drive.google.com/thumbnail?id=1mMinU9JPBLWw3_PFyt3-P2wxVnZ26Dak&sz=w1200" alt="Área comum Casa 8" loading="lazy"></div>
+      <div class="gal-item more reveal" onclick="openGalleryMore()" role="button" tabindex="0" aria-label="Ver mais fotos"><span class="gal-more-plus">+</span><span class="gal-more-label">Ver mais<br>33 fotos</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button type="button" class="lb-close" id="lbClose" aria-label="Fechar">✕</button>
+  <button type="button" class="lb-prev" id="lbPrev" aria-label="Anterior">‹</button>
+  <div class="lb-stage">
+    <img id="lbImg" src="" alt="Galeria Casa 8">
+    <div class="lb-counter" id="lbCounter">1 / 1</div>
+  </div>
+  <button type="button" class="lb-next" id="lbNext" aria-label="Próximo">›</button>
+</div>
+
+<div class="gal-modal" id="galModal" aria-hidden="true">
+  <div class="gal-modal-panel">
+    <div class="gal-modal-head">
+      <div>
+        <div class="gal-modal-eyebrow">Galeria</div>
+        <h3 class="gal-modal-title">Áreas comuns e externas</h3>
+      </div>
+      <button type="button" class="gal-modal-close" id="galModalClose" aria-label="Fechar">✕</button>
+    </div>
+    <div class="gal-modal-grid" id="galModalGrid"></div>
+  </div>
+</div>
+
+<section id="reviews">
+  <div class="s-inner">
+    <div class="eyebrow reveal">O que dizem de nós</div>
+    <h2 class="h2 reveal r-d1">Histórias de<br>quem já <em>ficou</em></h2>
+    <div class="rev-wrap">
+      <div class="rev-track" id="revTrack">
+        <div class="rev-card">
+          <div class="rev-stars">★★★★★</div>
+          <p class="rev-text">"Excelente estadia, ambiente acolhedor e equipe muito atenciosa."</p>
+          <div class="rev-author"><div class="rev-av">G</div><div><div class="rev-name">Gabriela Fernandes</div><div class="rev-origin">Brasil 🇧🇷</div></div></div>
+        </div>
+        <div class="rev-card">
+          <div class="rev-stars">★★★★★</div>
+          <p class="rev-text">"Localização perfeita, pertinho do Cristo Redentor e com fácil acesso a ônibus e metrô."</p>
+          <div class="rev-author"><div class="rev-av">R</div><div><div class="rev-name">Rafael Souza</div><div class="rev-origin">Brasil 🇧🇷</div></div></div>
+        </div>
+        <div class="rev-card">
+          <div class="rev-stars">★★★★★</div>
+          <p class="rev-text">"Uma experiência incrível, recomendo a todos que queiram relaxar e se divertir."</p>
+          <div class="rev-author"><div class="rev-av">C</div><div><div class="rev-name">Carolina Oliveira</div><div class="rev-origin">Brasil 🇧🇷</div></div></div>
+        </div>
+        <div class="rev-card">
+          <div class="rev-stars">★★★★★</div>
+          <p class="rev-text">"Quiet, friendly and so close to everything. Felt like a real home in Laranjeiras."</p>
+          <div class="rev-author"><div class="rev-av">M</div><div><div class="rev-name">Marcus L.</div><div class="rev-origin">Alemanha 🇩🇪</div></div></div>
+        </div>
+        <div class="rev-card">
+          <div class="rev-stars">★★★★★</div>
+          <p class="rev-text">"Ambiente familiar, limpo e com ótimo atendimento. Voltarei na próxima viagem ao Rio."</p>
+          <div class="rev-author"><div class="rev-av">A</div><div><div class="rev-name">Ana Paula</div><div class="rev-origin">São Paulo 🇧🇷</div></div></div>
+        </div>
+        <div class="rev-card">
+          <div class="rev-stars">★★★★★</div>
+          <p class="rev-text">"Un lugar tranquilo y con alma. Perfecto para descansar después de conocer la ciudad."</p>
+          <div class="rev-author"><div class="rev-av">L</div><div><div class="rev-name">Lucía M.</div><div class="rev-origin">Argentina 🇦🇷</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="rev-nav">
+      <button class="rev-arrow" onclick="revGo(-1)" aria-label="Anterior">‹</button>
+      <div class="rev-dots" id="revDots"></div>
+      <button class="rev-arrow" onclick="revGo(1)" aria-label="Próximo">›</button>
+    </div>
+  </div>
+</section>
+
+<section id="loc">
+  <div class="s-inner">
+    <div class="eyebrow reveal">Onde estamos</div>
+    <h2 class="h2 reveal r-d1">No coração<br>de <em>Laranjeiras</em></h2>
+    <div class="loc-grid">
+      <div class="reveal">
+        <h3>Hostel Casa 8</h3>
+        <p class="addr">📍 Rua das Laranjeiras, 285 — Casa 8<br>Laranjeiras, Rio de Janeiro - RJ</p>
+        <div class="dist-list">
+          <div class="dist"><span class="dist-ico">✝️</span><div class="dist-txt"><strong>Cristo Redentor</strong> — acesso conveniente</div></div>
+          <div class="dist"><span class="dist-ico">🏛️</span><div class="dist-txt"><strong>Museu da República</strong> — próximo</div></div>
+          <div class="dist"><span class="dist-ico">🏰</span><div class="dist-txt"><strong>Palácio das Laranjeiras</strong> — próximo</div></div>
+          <div class="dist"><span class="dist-ico">🚌</span><div class="dist-txt"><strong>Ônibus e metrô</strong> — fácil acesso</div></div>
+          <div class="dist"><span class="dist-ico">🏖️</span><div class="dist-txt"><strong>Copacabana / Flamengo</strong> — poucos minutos</div></div>
+          <div class="dist"><span class="dist-ico">🌳</span><div class="dist-txt"><strong>Bairro residencial</strong> — tranquilo e familiar</div></div>
+        </div>
+        <div class="loc-cta">
+          <a href="https://wa.me/5521982596427" class="btn-mata" target="_blank" rel="noopener">💬 WhatsApp</a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=-22.935304,-43.187833&travelmode=driving" class="btn-out-dark" target="_blank" rel="noopener">🗺️ Como Chegar</a>
+        </div>
+      </div>
+      <div class="map-wrap reveal r-d2">
+        <iframe src="https://www.google.com/maps?q=Rua+das+Laranjeiras,+285,+Laranjeiras,+Rio+de+Janeiro&hl=pt-BR&z=16&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Hostel Casa 8 no Google Maps"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="s-inner">
+    <div class="eyebrow reveal">Dúvidas frequentes</div>
+    <h2 class="h2 reveal r-d1">Tudo que você<br>precisa <em>saber</em></h2>
+    <div class="faq-grid">
+      <div class="faq-col">
+        <div class="faq-cat reveal">🛏️ Estadia</div>
+        <div class="faq-item reveal">
+          <button class="faq-q" onclick="toggleFaq(this)">Qual é o horário de check-in e check-out? <span class="faq-icon">+</span></button>
+          <div class="faq-a">Check-in a partir das <strong>14h</strong>. Check-out até as <strong>12h</strong>. Para chegadas fora do horário, fale conosco pelo WhatsApp com antecedência.</div>
+        </div>
+        <div class="faq-item reveal r-d1">
+          <button class="faq-q" onclick="toggleFaq(this)">Quais tipos de quarto vocês têm? <span class="faq-icon">+</span></button>
+          <div class="faq-a">Temos <strong>duplos privativos</strong> (Standard, Premium e Suíte Deluxe), <strong>Família Premium</strong> e <strong>quarto compartilhado</strong>. A Suíte Deluxe e o quarto compartilhado possuem <strong>banheiro próprio</strong>. Confira disponibilidade no motor de reservas.</div>
+        </div>
+        <div class="faq-item reveal r-d2">
+          <button class="faq-q" onclick="toggleFaq(this)">Posso receber visitas? <span class="faq-icon">+</span></button>
+          <div class="faq-a">Por segurança e respeito aos demais hóspedes, o acesso às dependências é restrito a <strong>hóspedes cadastrados</strong>. Consulte a recepção sobre regras específicas.</div>
+        </div>
+        <div class="faq-item reveal r-d3">
+          <button class="faq-q" onclick="toggleFaq(this)">É permitido fumar? <span class="faq-icon">+</span></button>
+          <div class="faq-a">O ambiente interno é <strong>livre de fumaça</strong>. Pergunte na recepção sobre áreas externas permitidas.</div>
+        </div>
+        <div class="faq-cat reveal" style="margin-top:32px">🛜 Serviços</div>
+        <div class="faq-item reveal">
+          <button class="faq-q" onclick="toggleFaq(this)">Tem Wi-Fi gratuito? <span class="faq-icon">+</span></button>
+          <div class="faq-a">Sim. Consulte a senha e a cobertura na recepção no check-in.</div>
+        </div>
+        <div class="faq-item reveal r-d1">
+          <button class="faq-q" onclick="toggleFaq(this)">Como faço a reserva? <span class="faq-icon">+</span></button>
+          <div class="faq-a">Pelo botão <strong>Reservar</strong> no site ou pelo WhatsApp <strong>(21) 98259-6427</strong>. Também atendemos por e-mail: ola@hostelcasa8.com.</div>
+        </div>
+      </div>
+      <div class="faq-col">
+        <div class="faq-cat reveal">📍 Localização</div>
+        <div class="faq-item reveal">
+          <button class="faq-q" onclick="toggleFaq(this)">Como chegar à Casa 8? <span class="faq-icon">+</span></button>
+          <div class="faq-a">Estamos na <strong>Rua das Laranjeiras, 285 — Casa 8</strong>, em Laranjeiras. Use o botão <strong>Como Chegar</strong> no mapa ou peça orientação pelo WhatsApp.</div>
+        </div>
+        <div class="faq-item reveal r-d1">
+          <button class="faq-q" onclick="toggleFaq(this)">Fica perto do Cristo Redentor? <span class="faq-icon">+</span></button>
+          <div class="faq-a">Sim. A localização em Laranjeiras oferece <strong>acesso conveniente</strong> ao Cristo Redentor e ao transporte pela cidade.</div>
+        </div>
+        <div class="faq-item reveal r-d2">
+          <button class="faq-q" onclick="toggleFaq(this)">Tem estacionamento? <span class="faq-icon">+</span></button>
+          <div class="faq-a">Consulte a disponibilidade e condições de estacionamento na região com a recepção pelo WhatsApp antes da chegada.</div>
+        </div>
+        <div class="faq-cat reveal" style="margin-top:32px">💳 Pagamento</div>
+        <div class="faq-item reveal">
+          <button class="faq-q" onclick="toggleFaq(this)">Quais formas de pagamento? <span class="faq-icon">+</span></button>
+          <div class="faq-a">Confirme as formas aceitas (PIX, cartão, transferência) no momento da reserva, pelo site ou WhatsApp.</div>
+        </div>
+        <div class="faq-item reveal r-d1">
+          <button class="faq-q" onclick="toggleFaq(this)">Qual a política de cancelamento? <span class="faq-icon">+</span></button>
+          <div class="faq-a">As regras de cancelamento e reembolso aparecem na confirmação da reserva. Em caso de dúvida, fale com a recepção.</div>
+        </div>
+        <div class="faq-item reveal r-d2">
+          <button class="faq-q" onclick="toggleFaq(this)">Posso fazer check-in tardio? <span class="faq-icon">+</span></button>
+          <div class="faq-a">Sim, com aviso prévio. <strong>Avise pelo WhatsApp</strong> para garantirmos o recebimento.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="cta-blob b1"></div><div class="cta-blob b2"></div>
+  <div class="cta-inner">
+    <div class="cta-txt">
+      <h2>Pronto pra conhecer a Casa 8?</h2>
+      <p>Reserve online ou fale com a gente pelo WhatsApp.</p>
+    </div>
+    <div class="cta-btns">
+      <a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" target="_blank" rel="noopener" class="btn-branco">🗓 Simular Reserva</a>
+      <a href="https://wa.me/5521982596427" class="btn-branco-out" target="_blank" rel="noopener">💬 WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="f-grid">
+    <div class="f-brand">
+      <div class="f-logo">Casa <em>8</em></div>
+      <p>Hostel em Laranjeiras, Rio de Janeiro. Mais do que uma hospedagem, seu lar na cidade.</p>
+      <div class="f-soc">
+        <a href="https://wa.me/5521982596427" class="soc-btn" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+        <a href="https://www.instagram.com/hostelcasa8/" class="soc-btn" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
+        <a href="mailto:ola@hostelcasa8.com" class="soc-btn" aria-label="E-mail">✉️</a>
+        <a href="https://www.hostelcasa8.com" class="soc-btn" target="_blank" rel="noopener" aria-label="Site">🌐</a>
+      </div>
+    </div>
+    <div class="f-col"><h4>Navegação</h4><ul>
+      <li><a href="#sobre">O Hostel</a></li>
+      <li><a href="#quartos">Quartos</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#reviews">Depoimentos</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#loc">Localização</a></li>
+    </ul></div>
+    <div class="f-col"><h4>Acomodações</h4><ul>
+      <li><a href="#quartos">Suíte Deluxe</a></li>
+      <li><a href="#quartos">Duplo Premium</a></li>
+      <li><a href="#quartos">Duplo Standard</a></li>
+      <li><a href="#quartos">Família Premium</a></li>
+      <li><a href="#quartos">Compartilhado</a></li>
+    </ul></div>
+    <div class="f-col"><h4>Contato</h4><ul>
+      <li>📍 Rua das Laranjeiras, 285 — Casa 8</li>
+      <li>Laranjeiras · Rio de Janeiro · RJ</li>
+      <li><a href="https://wa.me/5521982596427">📱 (21) 98259-6427</a></li>
+      <li><a href="https://www.instagram.com/hostelcasa8/" target="_blank" rel="noopener">📷 @hostelcasa8</a></li>
+      <li><a href="mailto:ola@hostelcasa8.com">✉️ ola@hostelcasa8.com</a></li>
+    </ul></div>
+  </div>
+  <div class="f-bottom">
+    <p>© 2026 Hostel Casa 8</p>
+    <p>Laranjeiras, Rio de Janeiro 🌿</p>
+  </div>
+</footer>
+
+<script>
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>40));
+
+const revs=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:.12});
+revs.forEach(el=>obs.observe(el));
+
+function toggleDrawer(){document.getElementById('navDrawer').classList.toggle('open');}
+
+function toggleFaq(btn){
+  var ans=btn.nextElementSibling;
+  var isOpen=ans.classList.contains('open');
+  document.querySelectorAll('.faq-a.open').forEach(function(a){
+    a.classList.remove('open');
+    a.previousElementSibling.classList.remove('open');
+  });
+  if(!isOpen){ans.classList.add('open');btn.classList.add('open');}
+}
+
+/* Lightbox */
+var galleryPool=[
+    {s:'https://drive.google.com/thumbnail?id=1fxCNewbrDnL2pIth7eXnA4F96-KUwC9T&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1DtaunF9J9dwdFZhIoR20qCREGY2q1_ZF&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1vGjFH4sy33pnqDIyhWOV5Ri0tD4kIY1q&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1z-g6LFVUXf_QRxG2i-2EVwGBJo6TrDGV&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1mvg9lw-1l-cXs5GY56TJDQ-9-dF-_7J6&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1MHUvxsQsglKQ3RhRHR7lfsLnV3jz-P40&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1mMinU9JPBLWw3_PFyt3-P2wxVnZ26Dak&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1hjtqblvouQpmezgA_67nq4qKctqojEHC&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1FntaJGO_w0RpFypUdVJxJ5z_m_9UUOYI&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1tDyWPp81xJ2NP3hxiuWPM7sKTwEaqr72&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1CWNzMsngC_9WlnWNPUypglITwmEYg7NF&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1XhDpehCmAdttec7Vbgml7IHU-z1ni1EP&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1MrMVDKIY248xY1cg8Cg7VLcQFHvCvKwd&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=19y0yJzNCZifLniqARLlXkUC2UuoOl3sr&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1VqPgrTVdVsP4B2BW1F5LsyZdRR8YDzud&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1NaTlVCeVY-z_CNs9wQZ-Pj9bUsKizXPC&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1t_7Vi0tp6MAfSFmBqD3MIc4laBaU3CAV&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1BS23MUJjhuQ2oA1dZzEt6O8VLWrGQW7L&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1cPdplmdR3WwZJQnuCdkfnl7rl8hWNw98&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1NHNHh2FME-G-9S6HClu3SOl29c1eQy74&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1eQK3JDGIyHZb27Wsd8qRjBDas5kAQ1am&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1cR1fHRjkxbP9vSSAHlsjQbKTebJ548Tr&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1x8W9hKB0XAhAoWNJj5TaGudFdO6-FilD&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1zbCtJcdnNu0ArayuaJRMfEHE-ZdcZMf8&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1cKmf8PFgqjVSh-NKgDhkxxFfa1X1SZsR&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=12cJdg6QJAga_nVoSKv0WBehoFYINxEnE&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1OibZ8YrPR3nd9njBRGhYKA07NDuCEVmj&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=12Dz9KbCCGLmThJx6qZsP24SC3uNC-6bD&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1k8DAKwtHdTFIBPQSrVB-JTl6Hb7CRTtq&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1CmyyEqoIXeerzpb17p28DxO1mDDg2TRO&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1zAmDOcIMc6YnNam8mwfw6r8DGxh6GxBn&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1GJEx_Hz0Jg4EYvRPjUr53Lsxo7rT6nZJ&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1-ARK3yPqIShC2gEsR-kyMRKwzOgb5UcZ&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1RZ4UXenLxJk-yPBUJ3mr2okTP9nZ3H_J&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1Jri6MjBSNMhDBHggfnlDBg8xJ9U5k0gZ&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1s7w6jeDGwkAegSoRPR2WK8Y7JuVnygpQ&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1ZcF0YcU4KXx6yLSDZ_kqnnc0I0wVwyXn&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1I7fxfNpgKYnpVhND0X3Kg26uCgaZPTwo&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1GESNEWvO42HbldOH_orK1BkrU851gMgW&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1Tky65-tThKyuQriiVgrJM7y0_NHq7c2n&sz=w1200'}
+];
+var roomPool={
+  suiteDeluxe:[
+    {s:'https://drive.google.com/thumbnail?id=12CRa0S1fn_SOmJHeLuUrb8ziWmH4TX6f&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1hO0y0zZKdME_8nlkfHuo6yqFuWYFA-e7&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1o-FpuSXPdnEoYG7Tvj2AVtok-QcNYkSf&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1CwP_45IEcvYNcz7O3Gtlpf1y9RkkBnHK&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1WmoP_-2Ey_m5suDjw5sDyZfEW4EPSa1n&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1RyxsQ9oOKeF197fv6ihRhOdmFhL1kJ1L&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1bzdOxhtz2_GoPtAZHfZ52o2_uTwAo7mE&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1e-RwP7r-88wsAzLDFnDtDRcJe2dt1XA3&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=14Z312gQfKzGKFA0ZyQQcn1VWxk4GTxJn&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=17K8WUquT6H46ybftWeB4HuijRdgsLeYx&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1UUc0OFebyEHmgey6Z5CM_fPF3npvNJTE&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1rDtVtem8INEjzIfswllrhpC-4L23B-vJ&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1BvYhpnmdZTkOphpeCWnFaBW2LKkF64Jd&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1JtR521oxlcZfSrHgDn6gdpYjO6-wWXaY&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=17cH8DFC8DLXPKV1oIE4beo9Hb9frmbgv&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1CBuVvHkxNFbL170AAOgA8rXyy_LxMTto&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1LsGxRUKR3ScmGcYn7uCPVxjVo0o9xKjK&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1UTkNssQP0hXDxQ6sxSX9gM6XA2mclESg&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1pgw7WTFVvRgL7Z78UyXl98SsnmYAiMaq&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1yLLFV2-KcQ6tCyGbdtgH3JxqEoTE_U3C&sz=w1200'}
+  ],
+  casalPremium:[
+    {s:'https://drive.google.com/thumbnail?id=1f9PVm4ZsKN72L2V78ELOJFyXSjvCAZzT&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1UpdTM5LvHOKp7sqLYv6Qep5P2Hdg_eDv&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1Bo4jLSo9UzsivQJXFG7vLwsms7Uu9a6B&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1ZkruII7iyfAm398IcegeuBqkQr0qduI_&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=12ZB-gZBsYEi8QzqNUB_FMXNEb8ANgrqI&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1-1JpcP7AFDYAFjAyzj9Tn6Bb7Q6z0KAH&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1bHCS_Mh2LE_X4gZfCR_TjAFaDeXqD3RF&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=19FUjTibbz2Dhjdg_JcVk9qqdmBubVpx7&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1M_ZRhtlCNNIw2e9Eg0CFLSsQfh0hPVtT&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=154YzTuqLVaeSVstlPGlUi0CHQUYrq9sr&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1JWiVrY3HR_8WuenwUNPyYzxUa4ppSQsG&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1D6ujQlINfJ-Gzl0u-9fVXokvh3gIQfOq&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=19ddWsHJMvOU1mL5Ox-gueYKAKIDnRC6j&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1DKrq2AY-9jjoDq7GdqREme7LSAEnYkNf&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=16KYMLdqpYPeCxAJzO6rLZsOUqgmdFW3o&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1EOknUNGfcUot46c4XPba-Hl0C7fdZhdl&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=18Lv_36F716NACVUHEUbSTqk77-X6ySDf&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1dmOSAiKk6YPSEmbmuf3Tc-VghGhodUgr&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1AqWp-SY49v29Ua0UNoIGyzjoMbD0L67J&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1Cqxjiq0ECDkYNZYVes4C374tdMLBMQOo&sz=w1200'}
+  ],
+  casalStandard:[
+    {s:'https://drive.google.com/thumbnail?id=1IfnTTtc_EoYVxLds8vCAyUMkrwxy7mUY&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1Qq2Cr6i5eNBosd3fK5dHtpR-_wOTMBDw&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1njm5wgSwQK1Yovqm9Iv3v4hrseBrhz_X&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1Ysv28Pq9Qqk7JWVuH698ZwRohF22bB-P&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=15ZM9wcrHhZ4jL68GfUB5L0d2kiiaHUUB&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=16HCew7gzq6sZL_DB_AZUQ-VSveZ6XDWb&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1WYhC4kHUZbtBN7GxG1jblAE_pFnweS96&sz=w1200'}
+  ],
+  familiaPremium:[
+    {s:'https://drive.google.com/thumbnail?id=1OYPo4NkbrY3arqpqpg9QOtE6Uo3suI48&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=17PpOsTE0K8hMaMMUT5Ze9m-VM1Lw9-x6&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1mRX6GA-1ljFJAANlSwUKJYHnY8YvwoeO&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1lNfTZmEbm1UPllMIDLO2j51O7iRWY1Zg&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1ZY3UKLpoCxt6QMueWUtdGN29RQoSSKHE&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1HNNSRH2osb3hMAuotgzRrsotgbEnDg19&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1rm5TVNZ5TBSuiLV8XvjuAvCxWPFQlE1_&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1x7W5xNCkQaau2ba-0V_h5OVYVqot2tzd&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1gq-RqXFfsNzlJgT5Pas0ZOjS9mD1Nheq&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1Y_qaYr0A3vKcBuZ07UUNnPMq0mEOsPyF&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1f8MtVg1YJoxzBZ5HpvAdjgvjGYHJOIUy&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1liRjZi4bUMfHDKhDx3IQ6xJOAl9O9jVt&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1DWpFMBEXdDLlocEE1PTQhGY2JU1lrUUl&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1wBd3Ulq8PTC3cPxeEpI_PDx8IA_pA8hW&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1p4m2pQioyPITAL2N9zAcsXgV_4cvLwtE&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=13ZcBthKX0fC5XE4amJ_gS4FlD_3c_rpr&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1ZDV6eDdBOs3qmo1JZ0HSbbK3CFzdRtsY&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1a3XJUi1RONem4yuw0ucd8G_BTWfY4iZ2&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1v0gjf_4dVRKUTZu2OXgjigAomhcg71Hs&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=18cO77hgdd3IGrkc-t7MhUpAeDeCzPzuq&sz=w1200'}
+  ],
+  compartilhado:[
+    {s:'https://drive.google.com/thumbnail?id=1wC1aU3NM2ddEbFC1JrgVB0Lo-_wFb4MC&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1Tk5ta8yCG-BDnDit7UjQ8mpfuqBHc3YK&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1uDO2l0sOWKA5dKNadtLFjNK528nv3Xq4&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=18nxthd_0FaFJkY9VBsGkY8oyXQ8jyh0q&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1hl68qz6Lvw5tfosV4Agf8apQFuzIxclh&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1FNQDPqPz0W813YcXk5Vq1Av35DczJGzp&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=16iyz882_RWeqSJV51iw3UuHMRqHoFWkb&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1XQ8onhkpEVR2yd-3nm8Y_nJQhQLv5o0e&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1eRQV1sF7eRw6nvTPjnipqmD2pHi5LXAF&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1hsx8_wo596_-7Ipne2G3Z50FQeJbrTqQ&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=105TCZ-kGFY2C1r6l4yJIDkXR9gOd3vGH&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1Y6SxVE3Tuiv5ndj1zm5SWUdUp6p5uLYk&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1kMmCISRlNdpup3MEt0lUmgWQffAI64Sv&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1ZJ6TRmXr8HXmlvFQqwe_sbrFJQ4v-CJw&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=10NrI_HWxtL4dinowp-wBku2Jv0bsnont&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1ftugF-y5WvaTg_ovDdwkjNAVr2h2pY-2&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1Lxdudt8Uw1svtxBo9Y8vlLHPbpw2FwuY&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1XV8luTN3H1x8HVzjiImj5s5AupWByElk&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1og2rjI9g3Xq6TqBf9W-iaaye77wHwn8L&sz=w1200'},
+    {s:'https://drive.google.com/thumbnail?id=1PpmG59IuBrBmN-cxi-bPX5NGZmUcg0Jk&sz=w1200'}
+  ]
+};
+var lbPool=[],lbI=0;
+var lb=document.getElementById('lightbox');
+var lbImg=document.getElementById('lbImg');
+var lbCounter=document.getElementById('lbCounter');
+var galModal=document.getElementById('galModal');
+var galModalGrid=document.getElementById('galModalGrid');
+function updateLbUI(){
+  if(!lbPool.length)return;
+  lbImg.src=lbPool[lbI].s;
+  if(lbCounter)lbCounter.textContent=(lbI+1)+' / '+lbPool.length;
+}
+function openLBWith(pool,i){
+  lbPool=pool||[];
+  if(!lbPool.length)return;
+  lbI=((i%lbPool.length)+lbPool.length)%lbPool.length;
+  updateLbUI();
+  lb.classList.add('open');
+  lb.setAttribute('aria-hidden','false');
+  document.body.classList.add('lb-open');
+}
+function openLB(i){openLBWith(galleryPool, typeof i==='number'?i:0);}
+function buildGalModal(){
+  if(!galModalGrid||galModalGrid.childElementCount)return;
+  galleryPool.forEach(function(item,idx){
+    var b=document.createElement('button');
+    b.type='button';
+    b.setAttribute('aria-label','Foto '+(idx+1));
+    b.innerHTML='<img src="'+item.s+'" alt="Foto '+(idx+1)+'" loading="lazy">';
+    b.addEventListener('click',function(e){
+      e.stopPropagation();
+      closeGalModal(false);
+      openLBWith(galleryPool,idx);
+    });
+    galModalGrid.appendChild(b);
+  });
+}
+function openGalleryMore(){
+  buildGalModal();
+  if(!galModal){openLBWith(galleryPool,0);return;}
+  galModal.classList.add('open');
+  galModal.setAttribute('aria-hidden','false');
+  document.body.classList.add('gal-modal-open');
+}
+function closeGalModal(unlock){
+  if(!galModal)return;
+  galModal.classList.remove('open');
+  galModal.setAttribute('aria-hidden','true');
+  if(unlock!==false)document.body.classList.remove('gal-modal-open');
+}
+function closeLB(){
+  lb.classList.remove('open');
+  lb.setAttribute('aria-hidden','true');
+  document.body.classList.remove('lb-open');
+  if(galModal&&!galModal.classList.contains('open'))document.body.classList.remove('gal-modal-open');
+}
+function navLB(d){
+  if(!lbPool.length)return;
+  lbI=(lbI+d+lbPool.length)%lbPool.length;
+  updateLbUI();
+}
+document.getElementById('lbClose').addEventListener('click',function(e){e.stopPropagation();closeLB();});
+document.getElementById('lbPrev').addEventListener('click',function(e){e.stopPropagation();navLB(-1);});
+document.getElementById('lbNext').addEventListener('click',function(e){e.stopPropagation();navLB(1);});
+if(document.getElementById('galModalClose')){
+  document.getElementById('galModalClose').addEventListener('click',function(e){e.stopPropagation();closeGalModal();});
+}
+if(galModal){
+  galModal.addEventListener('click',function(e){if(e.target===galModal)closeGalModal();});
+}
+lb.addEventListener('click',function(e){if(e.target===lb)closeLB();});
+document.addEventListener('keydown',function(e){
+  if(lb.classList.contains('open')){
+    if(e.key==='Escape')closeLB();
+    if(e.key==='ArrowRight')navLB(1);
+    if(e.key==='ArrowLeft')navLB(-1);
+    return;
+  }
+  if(galModal&&galModal.classList.contains('open')&&e.key==='Escape')closeGalModal();
+});
+
+/* Room sliders */
+function initSliders(){
+  document.querySelectorAll('[data-slider]').forEach(function(slider){
+    var slides=slider.querySelector('.room-slides');
+    var items=slider.querySelectorAll('.room-slide');
+    var dotsC=slider.querySelector('.slide-dots-r');
+    var counter=slider.querySelector('.slide-counter');
+    var roomKey=slider.getAttribute('data-room');
+    var cur=0,total=items.length;
+    if(total>1){
+      items.forEach(function(_,i){
+        var d=document.createElement('button');
+        d.className='sdot'+(i===0?' active':'');
+        d.setAttribute('aria-label','Foto '+(i+1));
+        d.onclick=function(e){e.stopPropagation();goTo(i);};
+        dotsC.appendChild(d);
+      });
+    } else if(counter){
+      counter.style.display='none';
+    }
+    function slideWidth(){return slider.getBoundingClientRect().width;}
+    function goTo(n){
+      cur=(n+total)%total;
+      slides.style.transform='translateX(-'+(cur*slideWidth())+'px)';
+      dotsC.querySelectorAll('.sdot').forEach(function(d,i){d.classList.toggle('active',i===cur);});
+      if(counter)counter.textContent=(cur+1)+' / '+total;
+    }
+    var prevBtn=slider.querySelector('.slide-prev');
+    var nextBtn=slider.querySelector('.slide-next');
+    if(prevBtn)prevBtn.addEventListener('click',function(e){e.stopPropagation();goTo(cur-1);});
+    if(nextBtn)nextBtn.addEventListener('click',function(e){e.stopPropagation();goTo(cur+1);});
+    if(total>1){setInterval(function(){goTo(cur+1);},2800);}
+    slides.addEventListener('click',function(e){
+      if(e.target.closest('.sdot'))return;
+      if(roomKey&&roomPool[roomKey]&&roomPool[roomKey].length)openLBWith(roomPool[roomKey],cur);
+    });
+    window.addEventListener('load',function(){goTo(cur);});
+    window.addEventListener('resize',function(){goTo(cur);});
+    requestAnimationFrame(function(){goTo(0);});
+  });
+}
+initSliders();
+
+/* Reviews carousel */
+const track=document.getElementById('revTrack');
+const dotsW=document.getElementById('revDots');
+const cards=track.querySelectorAll('.rev-card');
+let cur=0;
+function pp(){return window.innerWidth<640?1:window.innerWidth<1024?2:3;}
+function buildDots(){
+  dotsW.innerHTML='';
+  const pg=Math.ceil(cards.length/pp());
+  for(let i=0;i<pg;i++){
+    const d=document.createElement('button');
+    d.className='rdot'+(i===0?' active':'');
+    d.setAttribute('aria-label','Página '+(i+1));
+    d.onclick=()=>goTo(i);
+    dotsW.appendChild(d);
+  }
+}
+function goTo(p){
+  const max=Math.ceil(cards.length/pp())-1;
+  cur=Math.max(0,Math.min(p,max));
+  const w=cards[0].offsetWidth+22;
+  track.style.transform='translateX(-'+cur*pp()*w+'px)';
+  dotsW.querySelectorAll('.rdot').forEach((d,i)=>d.classList.toggle('active',i===cur));
+}
+function revGo(dir){goTo(cur+dir);}
+buildDots();
+setInterval(()=>{const pg=Math.ceil(cards.length/pp());goTo((cur+1)%pg);},5000);
+window.addEventListener('resize',()=>{buildDots();goTo(0);});
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+
+/* Language switcher */
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({pageLanguage:'pt',includedLanguages:'pt,en,es',autoDisplay:false},'google_translate_element');
+  setTimeout(initLangSwitcher,600);
+}
+function setGoogTransCookie(lang){
+  const host=document.location.hostname;
+  const clear='googtrans=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;';
+  document.cookie=clear;
+  document.cookie=clear+'domain='+host+';';
+  if(lang!=='pt'){
+    const val='googtrans=/pt/'+lang+';path=/;';
+    document.cookie=val;
+    document.cookie=val+'domain='+host+';';
+  }
+}
+function getCurrentLang(){
+  const m=document.cookie.match(/googtrans=\/pt\/([a-z]{2})/);
+  return m?m[1]:'pt';
+}
+function updateLangButtons(lang){
+  document.querySelectorAll('.lang-btn').forEach(btn=>{
+    btn.classList.toggle('active',btn.dataset.lang===lang);
+  });
+}
+function switchLang(lang){
+  if(lang===getCurrentLang())return;
+  setGoogTransCookie(lang);
+  localStorage.setItem('casa8-lang',lang);
+  const combo=document.querySelector('.goog-te-combo');
+  if(combo){
+    combo.value=lang;
+    combo.dispatchEvent(new Event('change'));
+    updateLangButtons(lang);
+  }else{
+    location.reload();
+  }
+}
+function initLangSwitcher(){
+  const saved=localStorage.getItem('casa8-lang');
+  const current=getCurrentLang();
+  const lang=saved||current;
+  updateLangButtons(lang);
+  if(saved&&saved!==current){
+    setGoogTransCookie(saved);
+    location.reload();
+    return;
+  }
+  document.querySelectorAll('.lang-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>switchLang(btn.dataset.lang));
+  });
+}
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
