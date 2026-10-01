@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hostel Casa 8 — Laranjeiras, Rio de Janeiro</title>
 <meta name="description" content="Hostel Casa 8 em Laranjeiras, Rio de Janeiro. Quartos privativos e compartilhados, ambiente familiar e acesso fácil ao Cristo Redentor e ao metrô.">
+<link rel="icon" href="casa8-logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -21,6 +22,9 @@ body{font-family:'Work Sans',sans-serif;background:var(--creme);color:var(--verd
 img{display:block;max-width:100%;}
 a{text-decoration:none;color:inherit;}
 button{font-family:inherit;cursor:pointer;}
+
+/* Translation Classes */
+.lang-en, .lang-es { display: none; }
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:12px 48px;background:transparent;border-bottom:1px solid transparent;transition:padding .3s,background .3s,border-color .3s,box-shadow .3s;}
@@ -40,9 +44,7 @@ nav.scrolled .nav-logo img{height:56px;}
 .lang-btn{background:none;border:2px solid transparent;border-radius:50%;width:36px;height:36px;padding:0;font-size:1.25rem;line-height:1;cursor:pointer;transition:border-color .2s,transform .2s;}
 .lang-btn:hover{transform:scale(1.08);}
 .lang-btn.active{border-color:var(--areia);box-shadow:0 0 0 2px rgba(212,165,116,.25);}
-#google_translate_element{display:none;}
-body{top:0!important;}
-.goog-te-banner-frame,.skiptranslate,.goog-te-gadget,.goog-te-balloon-frame,#goog-gt-tt{display:none!important;}
+
 .nav-toggle{display:none;flex-direction:column;gap:5px;}
 .nav-toggle span{width:24px;height:2px;background:var(--branco);border-radius:2px;}
 .nav-drawer{display:none;position:fixed;inset:0;z-index:1100;background:var(--verde);flex-direction:column;align-items:center;justify-content:center;gap:26px;}
@@ -116,7 +118,6 @@ section{padding:96px 48px;}
 .room-slides{display:flex;height:100%;transition:transform .4s ease;will-change:transform;cursor:pointer;}
 .room-slide{flex:0 0 100%;width:100%;height:100%;min-width:0;}
 .room-slide img{display:block;width:100%;height:100%;object-fit:cover;background:var(--creme-d);}
-/* room arrows enabled below */
 .slide-dots-r{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:5px;z-index:10;}
 .sdot{width:6px;height:6px;border-radius:50%;background:rgba(255,254,250,.5);border:none;cursor:pointer;transition:.2s;padding:0;}
 .sdot.active{background:var(--branco);transform:scale(1.3);}
@@ -136,8 +137,6 @@ section{padding:96px 48px;}
 
 /* GALERIA */
 #galeria{background:var(--branco);}
-
-.f-brand-logo{display:none;}
 .gal-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-auto-rows:200px;gap:14px;margin-top:48px;}
 .gal-item{border-radius:18px;overflow:hidden;cursor:pointer;position:relative;}
 .gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .45s;}
@@ -148,9 +147,9 @@ section{padding:96px 48px;}
 .gal-item.more::after{display:none!important;}
 .gal-more-plus{font-family:'Bricolage Grotesque',sans-serif;font-size:3.2rem;font-weight:700;line-height:1;}
 .gal-more-label{font-size:.82rem;font-weight:600;text-align:center;opacity:.85;line-height:1.35;}
-
 .gal-item::after{content:'🔍';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(26,58,47,0);font-size:1.4rem;opacity:0;transition:.25s;}
 .gal-item:hover::after{background:rgba(26,58,47,.28);opacity:1;}
+
 .lightbox{position:fixed;inset:0;z-index:4000;background:rgba(26,58,47,.94);display:none;align-items:center;justify-content:center;padding:48px;}
 .lightbox.open{display:flex;}
 .lb-stage{position:relative;z-index:4001;max-width:90vw;max-height:84vh;display:flex;flex-direction:column;align-items:center;gap:14px;}
@@ -175,11 +174,11 @@ body.lb-open{overflow:hidden;}
 .gal-modal-grid button:hover img{transform:scale(1.05);}
 @media(max-width:720px){.gal-modal-grid{grid-template-columns:repeat(2,1fr);}}
 body.gal-modal-open{overflow:hidden;}
+
 .slide-prev,.slide-next{position:absolute;top:50%;transform:translateY(-50%);z-index:12;width:38px;height:38px;border-radius:50%;border:none;background:rgba(26,58,47,.55);color:#fff;font-size:1.25rem;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transition:opacity .2s,background .2s;}
 .room-img:hover .slide-prev,.room-img:hover .slide-next,.room-slider:hover .slide-prev,.room-slider:hover .slide-next{opacity:1;}
 .slide-prev{left:10px;}.slide-next{right:10px;}
 .slide-prev:hover,.slide-next:hover{background:var(--terracota);}
-
 
 /* REVIEWS */
 #reviews{background:var(--creme-d);overflow:hidden;}
@@ -297,21 +296,22 @@ footer{background:var(--verde);color:var(--branco);padding:64px 48px 28px;}
     <img src="casa8-logo.png" alt="Hostel Casa 8">
     <span class="nav-logo-text">Casa <em>8</em></span>
   </a>
-  <div id="google_translate_element" aria-hidden="true"></div>
   <div class="nav-actions">
     <div class="lang-switch" aria-label="Idioma">
-      <button type="button" class="lang-btn active" data-lang="pt" title="Português" aria-label="Português">🇧🇷</button>
-      <button type="button" class="lang-btn" data-lang="en" title="English" aria-label="English">🇺🇸</button>
-      <button type="button" class="lang-btn" data-lang="es" title="Español" aria-label="Español">🇪🇸</button>
+      <button type="button" class="lang-btn active" data-lang="pt" onclick="setLanguage('pt')" title="Português" aria-label="Português">🇧🇷</button>
+      <button type="button" class="lang-btn" data-lang="en" onclick="setLanguage('en')" title="English" aria-label="English">🇺🇸</button>
+      <button type="button" class="lang-btn" data-lang="es" onclick="setLanguage('es')" title="Español" aria-label="Español">🇪🇸</button>
     </div>
     <div class="nav-links">
-      <a href="#sobre">O Hostel</a>
-      <a href="#quartos">Quartos</a>
-      <a href="#galeria">Galeria</a>
-      <a href="#reviews">Depoimentos</a>
+      <a href="#sobre"><span class="lang-pt">O Hostel</span><span class="lang-en">The Hostel</span><span class="lang-es">El Hostel</span></a>
+      <a href="#quartos"><span class="lang-pt">Quartos</span><span class="lang-en">Rooms</span><span class="lang-es">Habitaciones</span></a>
+      <a href="#galeria"><span class="lang-pt">Galeria</span><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a>
+      <a href="#reviews"><span class="lang-pt">Depoimentos</span><span class="lang-en">Testimonials</span><span class="lang-es">Testimonios</span></a>
       <a href="#faq">FAQ</a>
-      <a href="#loc">Localização</a>
-      <a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" target="_blank" rel="noopener" class="nav-reserva">🗓 Reservar</a>
+      <a href="#loc"><span class="lang-pt">Localização</span><span class="lang-en">Location</span><span class="lang-es">Ubicación</span></a>
+      <a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" target="_blank" rel="noopener" class="nav-reserva">
+        <span class="lang-pt">🗓 Reservar</span><span class="lang-en">🗓 Book</span><span class="lang-es">🗓 Reservar</span>
+      </a>
     </div>
     <div class="nav-toggle" id="navToggle" onclick="toggleDrawer()" aria-label="Menu"><span></span><span></span><span></span></div>
   </div>
@@ -319,13 +319,15 @@ footer{background:var(--verde);color:var(--branco);padding:64px 48px 28px;}
 
 <div class="nav-drawer" id="navDrawer">
   <button class="drawer-close" onclick="toggleDrawer()" aria-label="Fechar">✕</button>
-  <a href="#sobre" onclick="toggleDrawer()">O Hostel</a>
-  <a href="#quartos" onclick="toggleDrawer()">Quartos</a>
-  <a href="#galeria" onclick="toggleDrawer()">Galeria</a>
-  <a href="#reviews" onclick="toggleDrawer()">Depoimentos</a>
+  <a href="#sobre" onclick="toggleDrawer()"><span class="lang-pt">O Hostel</span><span class="lang-en">The Hostel</span><span class="lang-es">El Hostel</span></a>
+  <a href="#quartos" onclick="toggleDrawer()"><span class="lang-pt">Quartos</span><span class="lang-en">Rooms</span><span class="lang-es">Habitaciones</span></a>
+  <a href="#galeria" onclick="toggleDrawer()"><span class="lang-pt">Galeria</span><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a>
+  <a href="#reviews" onclick="toggleDrawer()"><span class="lang-pt">Depoimentos</span><span class="lang-en">Testimonials</span><span class="lang-es">Testimonios</span></a>
   <a href="#faq" onclick="toggleDrawer()">FAQ</a>
-  <a href="#loc" onclick="toggleDrawer()">Localização</a>
-  <a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" target="_blank" rel="noopener" style="background:var(--terracota);padding:13px 30px;border-radius:50px;font-size:1.05rem;color:var(--branco);">🗓 Reservar</a>
+  <a href="#loc" onclick="toggleDrawer()"><span class="lang-pt">Localização</span><span class="lang-en">Location</span><span class="lang-es">Ubicación</span></a>
+  <a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" target="_blank" rel="noopener" style="background:var(--terracota);padding:13px 30px;border-radius:50px;font-size:1.05rem;color:var(--branco);">
+    <span class="lang-pt">🗓 Reservar</span><span class="lang-en">🗓 Book</span><span class="lang-es">🗓 Reservar</span>
+  </a>
 </div>
 
 <section id="hero">
@@ -334,22 +336,50 @@ footer{background:var(--verde);color:var(--branco);padding:64px 48px 28px;}
   </div>
   <div class="hero-content">
     <div class="hero-eyebrow reveal">Hostel · Laranjeiras · Rio de Janeiro</div>
-    <h1 class="hero-h1 reveal r-d1">Mais do que hospedagem,<br>seu <em>lar</em> no Rio</h1>
-    <p class="hero-p reveal r-d2">No coração de Laranjeiras, a Casa 8 oferece acomodações tropicais, ambiente familiar e acesso fácil ao Cristo Redentor e ao transporte da cidade.</p>
+    <h1 class="hero-h1 reveal r-d1">
+      <span class="lang-pt">Mais do que hospedagem,<br>seu <em>lar</em> no Rio</span>
+      <span class="lang-en">More than accommodation,<br>your <em>home</em> in Rio</span>
+      <span class="lang-es">Más que alojamiento,<br>tu <em>hogar</em> en Río</span>
+    </h1>
+    <p class="hero-p reveal r-d2">
+      <span class="lang-pt">No coração de Laranjeiras, a Casa 8 oferece acomodações tropicais, ambiente familiar e acesso fácil ao Cristo Redentor e ao transporte da cidade.</span>
+      <span class="lang-en">In the heart of Laranjeiras, Casa 8 offers tropical accommodations, a family atmosphere, and easy access to Christ the Redeemer and city transport.</span>
+      <span class="lang-es">En el corazón de Laranjeiras, Casa 8 ofrece alojamientos tropicales, un ambiente familiar y fácil acceso al Cristo Redentor y al transporte de la ciudad.</span>
+    </p>
     <div class="hero-btns reveal r-d3">
-      <a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" class="btn btn-terra" target="_blank" rel="noopener">🗓 Reservar Online →</a>
-      <a href="#quartos" class="btn btn-out">Ver Quartos</a>
+      <a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" class="btn btn-terra" target="_blank" rel="noopener">
+        <span class="lang-pt">🗓 Reservar Online →</span><span class="lang-en">🗓 Book Online →</span><span class="lang-es">🗓 Reservar Online →</span>
+      </a>
+      <a href="#quartos" class="btn btn-out">
+        <span class="lang-pt">Ver Quartos</span><span class="lang-en">View Rooms</span><span class="lang-es">Ver Habitaciones</span>
+      </a>
     </div>
   </div>
 </section>
 
 <div class="stats-band">
   <div class="stats-inner">
-    <div class="stat-item reveal"><span style="font-size:1.3rem">✝️</span><div class="stat-text"><strong>~3 km</strong><span>do Cristo Redentor</span></div></div>
-    <div class="stat-item reveal r-d1"><span style="font-size:1.3rem">🚇</span><div class="stat-text"><strong>Fácil acesso</strong><span>a ônibus e metrô</span></div></div>
-    <div class="stat-item reveal r-d2"><span style="font-size:1.3rem">🌳</span><div class="stat-text"><strong>Laranjeiras</strong><span>bairro residencial</span></div></div>
-    <div class="stat-item reveal r-d3"><span style="font-size:1.3rem">🏖️</span><div class="stat-text"><strong>~20 min</strong><span>de Copacabana</span></div></div>
-    <div class="stat-item reveal r-d4"><span style="font-size:1.3rem">🏡</span><div class="stat-text"><strong>Ambiente</strong><span>familiar e tranquilo</span></div></div>
+    <div class="stat-item reveal"><span style="font-size:1.3rem">✝️</span><div class="stat-text"><strong>~3 km</strong><span>
+      <span class="lang-pt">do Cristo Redentor</span><span class="lang-en">from Christ the Redeemer</span><span class="lang-es">del Cristo Redentor</span>
+    </span></div></div>
+    <div class="stat-item reveal r-d1"><span style="font-size:1.3rem">🚇</span><div class="stat-text">
+      <strong class="lang-pt">Fácil acesso</strong><strong class="lang-en">Easy access</strong><strong class="lang-es">Fácil acceso</strong>
+      <span>
+        <span class="lang-pt">a ônibus e metrô</span><span class="lang-en">to bus and subway</span><span class="lang-es">a autobús y metro</span>
+      </span>
+    </div></div>
+    <div class="stat-item reveal r-d2"><span style="font-size:1.3rem">🌳</span><div class="stat-text"><strong>Laranjeiras</strong><span>
+      <span class="lang-pt">bairro residencial</span><span class="lang-en">residential neighborhood</span><span class="lang-es">barrio residencial</span>
+    </span></div></div>
+    <div class="stat-item reveal r-d3"><span style="font-size:1.3rem">🏖️</span><div class="stat-text"><strong>~20 min</strong><span>
+      <span class="lang-pt">de Copacabana</span><span class="lang-en">from Copacabana</span><span class="lang-es">de Copacabana</span>
+    </span></div></div>
+    <div class="stat-item reveal r-d4"><span style="font-size:1.3rem">🏡</span><div class="stat-text">
+      <strong class="lang-pt">Ambiente</strong><strong class="lang-en">Atmosphere</strong><strong class="lang-es">Ambiente</strong>
+      <span>
+        <span class="lang-pt">familiar e tranquilo</span><span class="lang-en">quiet and family-friendly</span><span class="lang-es">familiar y tranquilo</span>
+      </span>
+    </div></div>
   </div>
 </div>
 
@@ -361,17 +391,33 @@ footer{background:var(--verde);color:var(--branco);padding:64px 48px 28px;}
         <img class="sobre-img-b" src="casa8-logo-creme.png" alt="Logo Hostel Casa 8" loading="lazy">
       </div>
       <div>
-        <div class="eyebrow reveal">Sobre nós</div>
-        <h2 class="h2 reveal r-d1">Boas-vindas à<br>sua <em>Casa 8</em></h2>
-        <p class="sub reveal r-d2">O Hostel Casa 8, em Laranjeiras, oferece acomodações aconchegantes e tropicais: quartos duplos privativos (Standard, Premium e Deluxe), quarto familiar e compartilhado.</p>
-        <p class="reveal r-d3" style="color:var(--cinza);font-size:.96rem;line-height:1.75;margin-top:16px;max-width:560px;">Nossa localização facilita o acesso ao Cristo Redentor e ao transporte pela cidade. O objetivo é um ambiente tranquilo e familiar para você relaxar.</p>
-        <div class="sobre-tags reveal r-d3">
-          <span class="tag">🏠 Ambiente familiar</span>
-          <span class="tag">🌴 Clima tropical</span>
-          <span class="tag">📍 Laranjeiras</span>
-          <span class="tag">🛏️ Privativos & dorms</span>
+        <div class="eyebrow reveal">
+          <span class="lang-pt">Sobre nós</span><span class="lang-en">About Us</span><span class="lang-es">Sobre Nosotros</span>
         </div>
-        <a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" target="_blank" rel="noopener" class="btn btn-terra reveal r-d4">🗓 Simular Reserva →</a>
+        <h2 class="h2 reveal r-d1">
+          <span class="lang-pt">Boas-vindas à<br>sua <em>Casa 8</em></span>
+          <span class="lang-en">Welcome to<br>your <em>Casa 8</em></span>
+          <span class="lang-es">Bienvenidos a<br>su <em>Casa 8</em></span>
+        </h2>
+        <p class="sub reveal r-d2">
+          <span class="lang-pt">O Hostel Casa 8, em Laranjeiras, oferece acomodações aconchegantes e tropicais: quartos duplos privativos (Standard, Premium e Deluxe), quarto familiar e compartilhado.</span>
+          <span class="lang-en">Hostel Casa 8 in Laranjeiras offers cozy, tropical accommodations: private double rooms (Standard, Premium, and Deluxe), family rooms, and dorms.</span>
+          <span class="lang-es">El Hostel Casa 8 en Laranjeiras ofrece alojamientos acogedores y tropicales: habitaciones dobles privadas (Standard, Premium y Deluxe), habitación familiar y compartida.</span>
+        </p>
+        <p class="reveal r-d3" style="color:var(--cinza);font-size:.96rem;line-height:1.75;margin-top:16px;max-width:560px;">
+          <span class="lang-pt">Nossa localização facilita o acesso ao Cristo Redentor e ao transporte pela cidade. O objetivo é um ambiente tranquilo e familiar para você relaxar.</span>
+          <span class="lang-en">Our location provides easy access to Christ the Redeemer and city transportation. Our goal is a quiet, family-friendly environment for you to relax.</span>
+          <span class="lang-es">Nuestra ubicación facilita el acceso al Cristo Redentor y al transporte de la ciudad. El objetivo es un ambiente tranquilo y familiar para que te relajes.</span>
+        </p>
+        <div class="sobre-tags reveal r-d3">
+          <span class="tag">🏠 <span class="lang-pt">Ambiente familiar</span><span class="lang-en">Family atmosphere</span><span class="lang-es">Ambiente familiar</span></span>
+          <span class="tag">🌴 <span class="lang-pt">Clima tropical</span><span class="lang-en">Tropical vibe</span><span class="lang-es">Clima tropical</span></span>
+          <span class="tag">📍 Laranjeiras</span>
+          <span class="tag">🛏️ <span class="lang-pt">Privativos & dorms</span><span class="lang-en">Private & dorms</span><span class="lang-es">Privadas y dorms</span></span>
+        </div>
+        <a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" target="_blank" rel="noopener" class="btn btn-terra reveal r-d4">
+          <span class="lang-pt">🗓 Simular Reserva →</span><span class="lang-en">🗓 Simulate Booking →</span><span class="lang-es">🗓 Simular Reserva →</span>
+        </a>
       </div>
     </div>
   </div>
@@ -381,10 +427,18 @@ footer{background:var(--verde);color:var(--branco);padding:64px 48px 28px;}
   <div class="s-inner">
     <div class="q-header">
       <div>
-        <div class="eyebrow reveal">Acomodações</div>
-        <h2 class="h2 reveal r-d1">Um quarto pra<br>cada <em>jeito de ficar</em></h2>
+        <div class="eyebrow reveal">
+          <span class="lang-pt">Acomodações</span><span class="lang-en">Accommodations</span><span class="lang-es">Alojamientos</span>
+        </div>
+        <h2 class="h2 reveal r-d1">
+          <span class="lang-pt">Um quarto pra<br>cada <em>jeito de ficar</em></span>
+          <span class="lang-en">A room for<br>every <em>way to stay</em></span>
+          <span class="lang-es">Una habitación para<br>cada <em>forma de quedarse</em></span>
+        </h2>
       </div>
-      <a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" class="btn btn-terra reveal r-d2" target="_blank" rel="noopener">🗓 Reservar</a>
+      <a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" class="btn btn-terra reveal r-d2" target="_blank" rel="noopener">
+        <span class="lang-pt">🗓 Reservar</span><span class="lang-en">🗓 Book</span><span class="lang-es">🗓 Reservar</span>
+      </a>
     </div>
     <div class="rooms-grid">
 
@@ -397,34 +451,32 @@ footer{background:var(--verde);color:var(--branco);padding:64px 48px 28px;}
               <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1o-FpuSXPdnEoYG7Tvj2AVtok-QcNYkSf&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
               <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1CwP_45IEcvYNcz7O3Gtlpf1y9RkkBnHK&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
               <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1WmoP_-2Ey_m5suDjw5sDyZfEW4EPSa1n&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1RyxsQ9oOKeF197fv6ihRhOdmFhL1kJ1L&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1bzdOxhtz2_GoPtAZHfZ52o2_uTwAo7mE&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1e-RwP7r-88wsAzLDFnDtDRcJe2dt1XA3&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=14Z312gQfKzGKFA0ZyQQcn1VWxk4GTxJn&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=17K8WUquT6H46ybftWeB4HuijRdgsLeYx&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1UUc0OFebyEHmgey6Z5CM_fPF3npvNJTE&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1rDtVtem8INEjzIfswllrhpC-4L23B-vJ&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1BvYhpnmdZTkOphpeCWnFaBW2LKkF64Jd&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1JtR521oxlcZfSrHgDn6gdpYjO6-wWXaY&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=17cH8DFC8DLXPKV1oIE4beo9Hb9frmbgv&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1CBuVvHkxNFbL170AAOgA8rXyy_LxMTto&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1LsGxRUKR3ScmGcYn7uCPVxjVo0o9xKjK&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1UTkNssQP0hXDxQ6sxSX9gM6XA2mclESg&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1pgw7WTFVvRgL7Z78UyXl98SsnmYAiMaq&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1yLLFV2-KcQ6tCyGbdtgH3JxqEoTE_U3C&sz=w1200" alt="Suíte Deluxe" loading="lazy"></div>
             </div>
             <button type="button" class="slide-prev" aria-label="Anterior">‹</button>
             <button type="button" class="slide-next" aria-label="Próximo">›</button>
             <div class="slide-dots-r"></div>
-            <span class="slide-counter">1 / 20</span>
+            <span class="slide-counter">1 / 5</span>
           </div>
           <span class="room-tag terra">Deluxe</span>
         </div>
         <div class="room-body">
-          <h3 class="room-name">Suíte Deluxe</h3>
-          <p class="room-desc">O quarto mais especial da casa: aconchego, luz natural, banheiro próprio e detalhes tropicais para casais que querem conforto total.</p>
-          <div class="room-feats"><span class="rf">Cama de casal</span><span class="rf">Banheiro próprio</span><span class="rf">Privativo</span><span class="rf">Até 2 pessoas</span></div>
-          <div class="room-foot"><a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" class="btn-room" target="_blank" rel="noopener">Reservar →</a></div>
+          <h3 class="room-name">
+            <span class="lang-pt">Suíte Deluxe</span><span class="lang-en">Deluxe Suite</span><span class="lang-es">Suite Deluxe</span>
+          </h3>
+          <p class="room-desc">
+            <span class="lang-pt">O quarto mais especial da casa: aconchego, luz natural, banheiro próprio e detalhes tropicais para casais que querem conforto total.</span>
+            <span class="lang-en">The most special room in the house: coziness, natural light, en-suite bathroom, and tropical details for couples seeking total comfort.</span>
+            <span class="lang-es">La habitación más especial de la casa: calidez, luz natural, baño privado y detalles tropicales para parejas que buscan total comodidad.</span>
+          </p>
+          <div class="room-feats">
+            <span class="rf"><span class="lang-pt">Cama de casal</span><span class="lang-en">Double bed</span><span class="lang-es">Cama doble</span></span>
+            <span class="rf"><span class="lang-pt">Banheiro próprio</span><span class="lang-en">En-suite bathroom</span><span class="lang-es">Baño privado</span></span>
+            <span class="rf"><span class="lang-pt">Privativo</span><span class="lang-en">Private</span><span class="lang-es">Privada</span></span>
+            <span class="rf"><span class="lang-pt">Até 2 pessoas</span><span class="lang-en">Up to 2 people</span><span class="lang-es">Hasta 2 personas</span></span>
+          </div>
+          <div class="room-foot"><a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" class="btn-room" target="_blank" rel="noopener">
+            <span class="lang-pt">Reservar →</span><span class="lang-en">Book →</span><span class="lang-es">Reservar →</span>
+          </a></div>
         </div>
       </div>
 
@@ -435,36 +487,31 @@ footer{background:var(--verde);color:var(--branco);padding:64px 48px 28px;}
               <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1f9PVm4ZsKN72L2V78ELOJFyXSjvCAZzT&sz=w1200" alt="Casal Premium" loading="lazy"></div>
               <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1UpdTM5LvHOKp7sqLYv6Qep5P2Hdg_eDv&sz=w1200" alt="Casal Premium" loading="lazy"></div>
               <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1Bo4jLSo9UzsivQJXFG7vLwsms7Uu9a6B&sz=w1200" alt="Casal Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1ZkruII7iyfAm398IcegeuBqkQr0qduI_&sz=w1200" alt="Casal Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=12ZB-gZBsYEi8QzqNUB_FMXNEb8ANgrqI&sz=w1200" alt="Casal Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1-1JpcP7AFDYAFjAyzj9Tn6Bb7Q6z0KAH&sz=w1200" alt="Casal Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1bHCS_Mh2LE_X4gZfCR_TjAFaDeXqD3RF&sz=w1200" alt="Casal Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=19FUjTibbz2Dhjdg_JcVk9qqdmBubVpx7&sz=w1200" alt="Casal Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1M_ZRhtlCNNIw2e9Eg0CFLSsQfh0hPVtT&sz=w1200" alt="Casal Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=154YzTuqLVaeSVstlPGlUi0CHQUYrq9sr&sz=w1200" alt="Casal Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1JWiVrY3HR_8WuenwUNPyYzxUa4ppSQsG&sz=w1200" alt="Casal Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1D6ujQlINfJ-Gzl0u-9fVXokvh3gIQfOq&sz=w1200" alt="Casal Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=19ddWsHJMvOU1mL5Ox-gueYKAKIDnRC6j&sz=w1200" alt="Casal Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1DKrq2AY-9jjoDq7GdqREme7LSAEnYkNf&sz=w1200" alt="Casal Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=16KYMLdqpYPeCxAJzO6rLZsOUqgmdFW3o&sz=w1200" alt="Casal Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1EOknUNGfcUot46c4XPba-Hl0C7fdZhdl&sz=w1200" alt="Casal Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=18Lv_36F716NACVUHEUbSTqk77-X6ySDf&sz=w1200" alt="Casal Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1dmOSAiKk6YPSEmbmuf3Tc-VghGhodUgr&sz=w1200" alt="Casal Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1AqWp-SY49v29Ua0UNoIGyzjoMbD0L67J&sz=w1200" alt="Casal Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1Cqxjiq0ECDkYNZYVes4C374tdMLBMQOo&sz=w1200" alt="Casal Premium" loading="lazy"></div>
             </div>
             <button type="button" class="slide-prev" aria-label="Anterior">‹</button>
             <button type="button" class="slide-next" aria-label="Próximo">›</button>
             <div class="slide-dots-r"></div>
-            <span class="slide-counter">1 / 20</span>
+            <span class="slide-counter">1 / 3</span>
           </div>
           <span class="room-tag">Premium</span>
         </div>
         <div class="room-body">
-          <h3 class="room-name">Duplo Privativo Premium</h3>
-          <p class="room-desc">Privacidade e conforto em um ambiente tropical bem cuidado, ideal para casais.</p>
-          <div class="room-feats"><span class="rf">Cama de casal</span><span class="rf">Privativo</span><span class="rf">Até 2 pessoas</span></div>
-          <div class="room-foot"><a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" class="btn-room" target="_blank" rel="noopener">Reservar →</a></div>
+          <h3 class="room-name">
+            <span class="lang-pt">Duplo Privativo Premium</span><span class="lang-en">Premium Private Double</span><span class="lang-es">Doble Privada Premium</span>
+          </h3>
+          <p class="room-desc">
+            <span class="lang-pt">Privacidade e conforto em um ambiente tropical bem cuidado, ideal para casais.</span>
+            <span class="lang-en">Privacy and comfort in a well-kept tropical environment, ideal for couples.</span>
+            <span class="lang-es">Privacidad y confort en un entorno tropical bien cuidado, ideal para parejas.</span>
+          </p>
+          <div class="room-feats">
+            <span class="rf"><span class="lang-pt">Cama de casal</span><span class="lang-en">Double bed</span><span class="lang-es">Cama doble</span></span>
+            <span class="rf"><span class="lang-pt">Privativo</span><span class="lang-en">Private</span><span class="lang-es">Privada</span></span>
+            <span class="rf"><span class="lang-pt">Até 2 pessoas</span><span class="lang-en">Up to 2 people</span><span class="lang-es">Hasta 2 personas</span></span>
+          </div>
+          <div class="room-foot"><a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" class="btn-room" target="_blank" rel="noopener">
+            <span class="lang-pt">Reservar →</span><span class="lang-en">Book →</span><span class="lang-es">Reservar →</span>
+          </a></div>
         </div>
       </div>
 
@@ -475,23 +522,31 @@ footer{background:var(--verde);color:var(--branco);padding:64px 48px 28px;}
               <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1IfnTTtc_EoYVxLds8vCAyUMkrwxy7mUY&sz=w1200" alt="Casal Standard" loading="lazy"></div>
               <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1Qq2Cr6i5eNBosd3fK5dHtpR-_wOTMBDw&sz=w1200" alt="Casal Standard" loading="lazy"></div>
               <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1njm5wgSwQK1Yovqm9Iv3v4hrseBrhz_X&sz=w1200" alt="Casal Standard" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1Ysv28Pq9Qqk7JWVuH698ZwRohF22bB-P&sz=w1200" alt="Casal Standard" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=15ZM9wcrHhZ4jL68GfUB5L0d2kiiaHUUB&sz=w1200" alt="Casal Standard" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=16HCew7gzq6sZL_DB_AZUQ-VSveZ6XDWb&sz=w1200" alt="Casal Standard" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1WYhC4kHUZbtBN7GxG1jblAE_pFnweS96&sz=w1200" alt="Casal Standard" loading="lazy"></div>
             </div>
             <button type="button" class="slide-prev" aria-label="Anterior">‹</button>
             <button type="button" class="slide-next" aria-label="Próximo">›</button>
             <div class="slide-dots-r"></div>
-            <span class="slide-counter">1 / 7</span>
+            <span class="slide-counter">1 / 3</span>
           </div>
           <span class="room-tag areia">Standard</span>
         </div>
         <div class="room-body">
-          <h3 class="room-name">Duplo Privativo Standard</h3>
-          <p class="room-desc">Opção prática e aconchegante para quem busca privacidade com ótimo custo-benefício.</p>
-          <div class="room-feats"><span class="rf">Cama de casal</span><span class="rf">Privativo</span><span class="rf">Até 2 pessoas</span></div>
-          <div class="room-foot"><a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" class="btn-room" target="_blank" rel="noopener">Reservar →</a></div>
+          <h3 class="room-name">
+            <span class="lang-pt">Duplo Privativo Standard</span><span class="lang-en">Standard Private Double</span><span class="lang-es">Doble Privada Standard</span>
+          </h3>
+          <p class="room-desc">
+            <span class="lang-pt">Opção prática e aconchegante para quem busca privacidade com ótimo custo-benefício.</span>
+            <span class="lang-en">Practical and cozy option for those seeking privacy with great value.</span>
+            <span class="lang-es">Opción práctica y acogedora para quienes buscan privacidad con excelente relación calidad-precio.</span>
+          </p>
+          <div class="room-feats">
+            <span class="rf"><span class="lang-pt">Cama de casal</span><span class="lang-en">Double bed</span><span class="lang-es">Cama doble</span></span>
+            <span class="rf"><span class="lang-pt">Privativo</span><span class="lang-en">Private</span><span class="lang-es">Privada</span></span>
+            <span class="rf"><span class="lang-pt">Até 2 pessoas</span><span class="lang-en">Up to 2 people</span><span class="lang-es">Hasta 2 personas</span></span>
+          </div>
+          <div class="room-foot"><a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" class="btn-room" target="_blank" rel="noopener">
+            <span class="lang-pt">Reservar →</span><span class="lang-en">Book →</span><span class="lang-es">Reservar →</span>
+          </a></div>
         </div>
       </div>
 
@@ -502,36 +557,31 @@ footer{background:var(--verde);color:var(--branco);padding:64px 48px 28px;}
               <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1OYPo4NkbrY3arqpqpg9QOtE6Uo3suI48&sz=w1200" alt="Família Premium" loading="lazy"></div>
               <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=17PpOsTE0K8hMaMMUT5Ze9m-VM1Lw9-x6&sz=w1200" alt="Família Premium" loading="lazy"></div>
               <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1mRX6GA-1ljFJAANlSwUKJYHnY8YvwoeO&sz=w1200" alt="Família Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1lNfTZmEbm1UPllMIDLO2j51O7iRWY1Zg&sz=w1200" alt="Família Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1ZY3UKLpoCxt6QMueWUtdGN29RQoSSKHE&sz=w1200" alt="Família Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1HNNSRH2osb3hMAuotgzRrsotgbEnDg19&sz=w1200" alt="Família Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1rm5TVNZ5TBSuiLV8XvjuAvCxWPFQlE1_&sz=w1200" alt="Família Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1x7W5xNCkQaau2ba-0V_h5OVYVqot2tzd&sz=w1200" alt="Família Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1gq-RqXFfsNzlJgT5Pas0ZOjS9mD1Nheq&sz=w1200" alt="Família Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1Y_qaYr0A3vKcBuZ07UUNnPMq0mEOsPyF&sz=w1200" alt="Família Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1f8MtVg1YJoxzBZ5HpvAdjgvjGYHJOIUy&sz=w1200" alt="Família Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1liRjZi4bUMfHDKhDx3IQ6xJOAl9O9jVt&sz=w1200" alt="Família Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1DWpFMBEXdDLlocEE1PTQhGY2JU1lrUUl&sz=w1200" alt="Família Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1wBd3Ulq8PTC3cPxeEpI_PDx8IA_pA8hW&sz=w1200" alt="Família Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1p4m2pQioyPITAL2N9zAcsXgV_4cvLwtE&sz=w1200" alt="Família Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=13ZcBthKX0fC5XE4amJ_gS4FlD_3c_rpr&sz=w1200" alt="Família Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1ZDV6eDdBOs3qmo1JZ0HSbbK3CFzdRtsY&sz=w1200" alt="Família Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1a3XJUi1RONem4yuw0ucd8G_BTWfY4iZ2&sz=w1200" alt="Família Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1v0gjf_4dVRKUTZu2OXgjigAomhcg71Hs&sz=w1200" alt="Família Premium" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=18cO77hgdd3IGrkc-t7MhUpAeDeCzPzuq&sz=w1200" alt="Família Premium" loading="lazy"></div>
             </div>
             <button type="button" class="slide-prev" aria-label="Anterior">‹</button>
             <button type="button" class="slide-next" aria-label="Próximo">›</button>
             <div class="slide-dots-r"></div>
-            <span class="slide-counter">1 / 20</span>
+            <span class="slide-counter">1 / 3</span>
           </div>
           <span class="room-tag">Família Premium</span>
         </div>
         <div class="room-body">
-          <h3 class="room-name">Família Premium</h3>
-          <p class="room-desc">Espaço pensado para famílias e grupos pequenos que querem ficar juntos com conforto.</p>
-          <div class="room-feats"><span class="rf">Privativo</span><span class="rf">Ideal para família</span><span class="rf">Espaçoso</span></div>
-          <div class="room-foot"><a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" class="btn-room" target="_blank" rel="noopener">Reservar →</a></div>
+          <h3 class="room-name">
+            <span class="lang-pt">Família Premium</span><span class="lang-en">Premium Family</span><span class="lang-es">Familia Premium</span>
+          </h3>
+          <p class="room-desc">
+            <span class="lang-pt">Espaço pensado para famílias e grupos pequenos que querem ficar juntos com conforto.</span>
+            <span class="lang-en">Space designed for families and small groups who want to stay together in comfort.</span>
+            <span class="lang-es">Espacio diseñado para familias y grupos pequeños que quieren estar juntos con comodidad.</span>
+          </p>
+          <div class="room-feats">
+            <span class="rf"><span class="lang-pt">Privativo</span><span class="lang-en">Private</span><span class="lang-es">Privada</span></span>
+            <span class="rf"><span class="lang-pt">Ideal para família</span><span class="lang-en">Ideal for families</span><span class="lang-es">Ideal para familias</span></span>
+            <span class="rf"><span class="lang-pt">Espaçoso</span><span class="lang-en">Spacious</span><span class="lang-es">Espaciosa</span></span>
+          </div>
+          <div class="room-foot"><a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" class="btn-room" target="_blank" rel="noopener">
+            <span class="lang-pt">Reservar →</span><span class="lang-en">Book →</span><span class="lang-es">Reservar →</span>
+          </a></div>
         </div>
       </div>
 
@@ -542,36 +592,31 @@ footer{background:var(--verde);color:var(--branco);padding:64px 48px 28px;}
               <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1wC1aU3NM2ddEbFC1JrgVB0Lo-_wFb4MC&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
               <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1Tk5ta8yCG-BDnDit7UjQ8mpfuqBHc3YK&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
               <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1uDO2l0sOWKA5dKNadtLFjNK528nv3Xq4&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=18nxthd_0FaFJkY9VBsGkY8oyXQ8jyh0q&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1hl68qz6Lvw5tfosV4Agf8apQFuzIxclh&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1FNQDPqPz0W813YcXk5Vq1Av35DczJGzp&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=16iyz882_RWeqSJV51iw3UuHMRqHoFWkb&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1XQ8onhkpEVR2yd-3nm8Y_nJQhQLv5o0e&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1eRQV1sF7eRw6nvTPjnipqmD2pHi5LXAF&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1hsx8_wo596_-7Ipne2G3Z50FQeJbrTqQ&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=105TCZ-kGFY2C1r6l4yJIDkXR9gOd3vGH&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1Y6SxVE3Tuiv5ndj1zm5SWUdUp6p5uLYk&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1kMmCISRlNdpup3MEt0lUmgWQffAI64Sv&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1ZJ6TRmXr8HXmlvFQqwe_sbrFJQ4v-CJw&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=10NrI_HWxtL4dinowp-wBku2Jv0bsnont&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1ftugF-y5WvaTg_ovDdwkjNAVr2h2pY-2&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1Lxdudt8Uw1svtxBo9Y8vlLHPbpw2FwuY&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1XV8luTN3H1x8HVzjiImj5s5AupWByElk&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1og2rjI9g3Xq6TqBf9W-iaaye77wHwn8L&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
-              <div class="room-slide"><img src="https://drive.google.com/thumbnail?id=1PpmG59IuBrBmN-cxi-bPX5NGZmUcg0Jk&sz=w1200" alt="Quarto Compartilhado" loading="lazy"></div>
             </div>
             <button type="button" class="slide-prev" aria-label="Anterior">‹</button>
             <button type="button" class="slide-next" aria-label="Próximo">›</button>
             <div class="slide-dots-r"></div>
-            <span class="slide-counter">1 / 20</span>
+            <span class="slide-counter">1 / 3</span>
           </div>
           <span class="room-tag areia">Dorm</span>
         </div>
         <div class="room-body">
-          <h3 class="room-name">Quarto Compartilhado</h3>
-          <p class="room-desc">Perfeito para quem viaja sozinho e quer conhecer gente nova. Conta com banheiro próprio no quarto.</p>
-          <div class="room-feats"><span class="rf">Compartilhado</span><span class="rf">Banheiro próprio</span><span class="rf">Ambiente social</span></div>
-          <div class="room-foot"><a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" class="btn-room" target="_blank" rel="noopener">Reservar →</a></div>
+          <h3 class="room-name">
+            <span class="lang-pt">Quarto Compartilhado</span><span class="lang-en">Shared Dorm</span><span class="lang-es">Habitación Compartida</span>
+          </h3>
+          <p class="room-desc">
+            <span class="lang-pt">Perfeito para quem viaja sozinho e quer conhecer gente nova. Conta com banheiro próprio no quarto.</span>
+            <span class="lang-en">Perfect for solo travelers who want to meet new people. Features an en-suite bathroom.</span>
+            <span class="lang-es">Perfecto para quienes viajan solos y quieren conocer gente nueva. Cuenta con baño dentro de la habitación.</span>
+          </p>
+          <div class="room-feats">
+            <span class="rf"><span class="lang-pt">Compartilhado</span><span class="lang-en">Shared</span><span class="lang-es">Compartida</span></span>
+            <span class="rf"><span class="lang-pt">Banheiro próprio</span><span class="lang-en">En-suite bathroom</span><span class="lang-es">Baño propio</span></span>
+            <span class="rf"><span class="lang-pt">Ambiente social</span><span class="lang-en">Social atmosphere</span><span class="lang-es">Ambiente social</span></span>
+          </div>
+          <div class="room-foot"><a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" class="btn-room" target="_blank" rel="noopener">
+            <span class="lang-pt">Reservar →</span><span class="lang-en">Book →</span><span class="lang-es">Reservar →</span>
+          </a></div>
         </div>
       </div>
 
@@ -581,8 +626,14 @@ footer{background:var(--verde);color:var(--branco);padding:64px 48px 28px;}
 
 <section id="galeria">
   <div class="s-inner">
-    <div class="eyebrow reveal">Nosso espaço</div>
-    <h2 class="h2 reveal r-d1">Detalhes que fazem<br>você se <em>sentir em casa</em></h2>
+    <div class="eyebrow reveal">
+      <span class="lang-pt">Nosso espaço</span><span class="lang-en">Our space</span><span class="lang-es">Nuestro espacio</span>
+    </div>
+    <h2 class="h2 reveal r-d1">
+      <span class="lang-pt">Detalhes que fazem<br>você se <em>sentir em casa</em></span>
+      <span class="lang-en">Details that make<br>you <em>feel at home</em></span>
+      <span class="lang-es">Detalles que te hacen<br><em>sentirte en casa</em></span>
+    </h2>
     <div class="gal-grid">
       <div class="gal-item big reveal" onclick="openLB(0)"><img src="https://drive.google.com/thumbnail?id=1fxCNewbrDnL2pIth7eXnA4F96-KUwC9T&sz=w1200" alt="Área comum Casa 8" loading="lazy"></div>
       <div class="gal-item reveal r-d2" onclick="openLB(1)"><img src="https://drive.google.com/thumbnail?id=1DtaunF9J9dwdFZhIoR20qCREGY2q1_ZF&sz=w1200" alt="Área comum Casa 8" loading="lazy"></div>
@@ -591,7 +642,12 @@ footer{background:var(--verde);color:var(--branco);padding:64px 48px 28px;}
       <div class="gal-item reveal r-d2" onclick="openLB(4)"><img src="https://drive.google.com/thumbnail?id=1mvg9lw-1l-cXs5GY56TJDQ-9-dF-_7J6&sz=w1200" alt="Área comum Casa 8" loading="lazy"></div>
       <div class="gal-item reveal r-d3" onclick="openLB(5)"><img src="https://drive.google.com/thumbnail?id=1MHUvxsQsglKQ3RhRHR7lfsLnV3jz-P40&sz=w1200" alt="Área comum Casa 8" loading="lazy"></div>
       <div class="gal-item reveal r-d1" onclick="openLB(6)"><img src="https://drive.google.com/thumbnail?id=1mMinU9JPBLWw3_PFyt3-P2wxVnZ26Dak&sz=w1200" alt="Área comum Casa 8" loading="lazy"></div>
-      <div class="gal-item more reveal" onclick="openGalleryMore()" role="button" tabindex="0" aria-label="Ver mais fotos"><span class="gal-more-plus">+</span><span class="gal-more-label">Ver mais<br>33 fotos</span></div>
+      <div class="gal-item more reveal" onclick="openGalleryMore()" role="button" tabindex="0" aria-label="Ver mais fotos">
+        <span class="gal-more-plus">+</span>
+        <span class="gal-more-label">
+          <span class="lang-pt">Ver mais<br>33 fotos</span><span class="lang-en">View 33<br>more photos</span><span class="lang-es">Ver 33<br>fotos más</span>
+        </span>
+      </div>
     </div>
   </div>
 </section>
@@ -610,8 +666,12 @@ footer{background:var(--verde);color:var(--branco);padding:64px 48px 28px;}
   <div class="gal-modal-panel">
     <div class="gal-modal-head">
       <div>
-        <div class="gal-modal-eyebrow">Galeria</div>
-        <h3 class="gal-modal-title">Áreas comuns e externas</h3>
+        <div class="gal-modal-eyebrow">
+          <span class="lang-pt">Galeria</span><span class="lang-en">Gallery</span><span class="lang-es">Galería</span>
+        </div>
+        <h3 class="gal-modal-title">
+          <span class="lang-pt">Áreas comuns e externas</span><span class="lang-en">Common and outdoor areas</span><span class="lang-es">Áreas comunes y exteriores</span>
+        </h3>
       </div>
       <button type="button" class="gal-modal-close" id="galModalClose" aria-label="Fechar">✕</button>
     </div>
@@ -621,38 +681,68 @@ footer{background:var(--verde);color:var(--branco);padding:64px 48px 28px;}
 
 <section id="reviews">
   <div class="s-inner">
-    <div class="eyebrow reveal">O que dizem de nós</div>
-    <h2 class="h2 reveal r-d1">Histórias de<br>quem já <em>ficou</em></h2>
+    <div class="eyebrow reveal">
+      <span class="lang-pt">O que dizem de nós</span><span class="lang-en">What they say about us</span><span class="lang-es">Lo que dicen de nosotros</span>
+    </div>
+    <h2 class="h2 reveal r-d1">
+      <span class="lang-pt">Histórias de<br>quem já <em>ficou</em></span>
+      <span class="lang-en">Stories from<br>those who <em>stayed</em></span>
+      <span class="lang-es">Historias de<br>quienes se <em>quedaron</em></span>
+    </h2>
     <div class="rev-wrap">
       <div class="rev-track" id="revTrack">
         <div class="rev-card">
           <div class="rev-stars">★★★★★</div>
-          <p class="rev-text">"Excelente estadia, ambiente acolhedor e equipe muito atenciosa."</p>
+          <p class="rev-text">
+            <span class="lang-pt">"Excelente estadia, ambiente acolhedor e equipe muito atenciosa."</span>
+            <span class="lang-en">"Excellent stay, welcoming environment, and very attentive staff."</span>
+            <span class="lang-es">"Excelente estadía, ambiente acogedor y personal muy atento."</span>
+          </p>
           <div class="rev-author"><div class="rev-av">G</div><div><div class="rev-name">Gabriela Fernandes</div><div class="rev-origin">Brasil 🇧🇷</div></div></div>
         </div>
         <div class="rev-card">
           <div class="rev-stars">★★★★★</div>
-          <p class="rev-text">"Localização perfeita, pertinho do Cristo Redentor e com fácil acesso a ônibus e metrô."</p>
+          <p class="rev-text">
+            <span class="lang-pt">"Localização perfeita, pertinho do Cristo Redentor e com fácil acesso a ônibus e metrô."</span>
+            <span class="lang-en">"Perfect location, close to Christ the Redeemer and with easy access to bus and subway."</span>
+            <span class="lang-es">"Ubicación perfecta, cerca del Cristo Redentor y con fácil acceso a autobús y metro."</span>
+          </p>
           <div class="rev-author"><div class="rev-av">R</div><div><div class="rev-name">Rafael Souza</div><div class="rev-origin">Brasil 🇧🇷</div></div></div>
         </div>
         <div class="rev-card">
           <div class="rev-stars">★★★★★</div>
-          <p class="rev-text">"Uma experiência incrível, recomendo a todos que queiram relaxar e se divertir."</p>
+          <p class="rev-text">
+            <span class="lang-pt">"Uma experiência incrível, recomendo a todos que queiram relaxar e se divertir."</span>
+            <span class="lang-en">"An incredible experience, I recommend it to everyone who wants to relax and have fun."</span>
+            <span class="lang-es">"Una experiencia increíble, lo recomiendo a todos los que quieran relajarse y divertirse."</span>
+          </p>
           <div class="rev-author"><div class="rev-av">C</div><div><div class="rev-name">Carolina Oliveira</div><div class="rev-origin">Brasil 🇧🇷</div></div></div>
         </div>
         <div class="rev-card">
           <div class="rev-stars">★★★★★</div>
-          <p class="rev-text">"Quiet, friendly and so close to everything. Felt like a real home in Laranjeiras."</p>
+          <p class="rev-text">
+            <span class="lang-pt">"Quiet, friendly and so close to everything. Felt like a real home in Laranjeiras."</span>
+            <span class="lang-en">"Quiet, friendly and so close to everything. Felt like a real home in Laranjeiras."</span>
+            <span class="lang-es">"Tranquilo, amigable y muy cerca de todo. Se sintió como un verdadero hogar en Laranjeiras."</span>
+          </p>
           <div class="rev-author"><div class="rev-av">M</div><div><div class="rev-name">Marcus L.</div><div class="rev-origin">Alemanha 🇩🇪</div></div></div>
         </div>
         <div class="rev-card">
           <div class="rev-stars">★★★★★</div>
-          <p class="rev-text">"Ambiente familiar, limpo e com ótimo atendimento. Voltarei na próxima viagem ao Rio."</p>
+          <p class="rev-text">
+            <span class="lang-pt">"Ambiente familiar, limpo e com ótimo atendimento. Voltarei na próxima viagem ao Rio."</span>
+            <span class="lang-en">"Family atmosphere, clean, and great service. I will return on my next trip to Rio."</span>
+            <span class="lang-es">"Ambiente familiar, limpio y con excelente atención. Volveré en mi próximo viaje a Río."</span>
+          </p>
           <div class="rev-author"><div class="rev-av">A</div><div><div class="rev-name">Ana Paula</div><div class="rev-origin">São Paulo 🇧🇷</div></div></div>
         </div>
         <div class="rev-card">
           <div class="rev-stars">★★★★★</div>
-          <p class="rev-text">"Un lugar tranquilo y con alma. Perfecto para descansar después de conocer la ciudad."</p>
+          <p class="rev-text">
+            <span class="lang-pt">"Un lugar tranquilo y con alma. Perfecto para descansar después de conocer la ciudad."</span>
+            <span class="lang-en">"A quiet place with soul. Perfect for resting after exploring the city."</span>
+            <span class="lang-es">"Un lugar tranquilo y con alma. Perfecto para descansar después de conocer la ciudad."</span>
+          </p>
           <div class="rev-author"><div class="rev-av">L</div><div><div class="rev-name">Lucía M.</div><div class="rev-origin">Argentina 🇦🇷</div></div></div>
         </div>
       </div>
@@ -667,23 +757,45 @@ footer{background:var(--verde);color:var(--branco);padding:64px 48px 28px;}
 
 <section id="loc">
   <div class="s-inner">
-    <div class="eyebrow reveal">Onde estamos</div>
-    <h2 class="h2 reveal r-d1">No coração<br>de <em>Laranjeiras</em></h2>
+    <div class="eyebrow reveal">
+      <span class="lang-pt">Onde estamos</span><span class="lang-en">Where we are</span><span class="lang-es">Dónde estamos</span>
+    </div>
+    <h2 class="h2 reveal r-d1">
+      <span class="lang-pt">No coração<br>de <em>Laranjeiras</em></span>
+      <span class="lang-en">In the heart<br>of <em>Laranjeiras</em></span>
+      <span class="lang-es">En el corazón<br>de <em>Laranjeiras</em></span>
+    </h2>
     <div class="loc-grid">
       <div class="reveal">
         <h3>Hostel Casa 8</h3>
         <p class="addr">📍 Rua das Laranjeiras, 285 — Casa 8<br>Laranjeiras, Rio de Janeiro - RJ</p>
         <div class="dist-list">
-          <div class="dist"><span class="dist-ico">✝️</span><div class="dist-txt"><strong>Cristo Redentor</strong> — acesso conveniente</div></div>
-          <div class="dist"><span class="dist-ico">🏛️</span><div class="dist-txt"><strong>Museu da República</strong> — próximo</div></div>
-          <div class="dist"><span class="dist-ico">🏰</span><div class="dist-txt"><strong>Palácio das Laranjeiras</strong> — próximo</div></div>
-          <div class="dist"><span class="dist-ico">🚌</span><div class="dist-txt"><strong>Ônibus e metrô</strong> — fácil acesso</div></div>
-          <div class="dist"><span class="dist-ico">🏖️</span><div class="dist-txt"><strong>Copacabana / Flamengo</strong> — poucos minutos</div></div>
-          <div class="dist"><span class="dist-ico">🌳</span><div class="dist-txt"><strong>Bairro residencial</strong> — tranquilo e familiar</div></div>
+          <div class="dist"><span class="dist-ico">✝️️</span><div class="dist-txt"><strong>Cristo Redentor</strong> — 
+            <span class="lang-pt">acesso conveniente</span><span class="lang-en">convenient access</span><span class="lang-es">acceso conveniente</span>
+          </div></div>
+          <div class="dist"><span class="dist-ico">🏛️</span><div class="dist-txt"><strong>Museu da República</strong> — 
+            <span class="lang-pt">próximo</span><span class="lang-en">nearby</span><span class="lang-es">cerca</span>
+          </div></div>
+          <div class="dist"><span class="dist-ico">🏰</span><div class="dist-txt"><strong>Palácio das Laranjeiras</strong> — 
+            <span class="lang-pt">próximo</span><span class="lang-en">nearby</span><span class="lang-es">cerca</span>
+          </div></div>
+          <div class="dist"><span class="dist-ico">🚌</span><div class="dist-txt">
+            <strong class="lang-pt">Ônibus e metrô</strong><strong class="lang-en">Bus and subway</strong><strong class="lang-es">Autobús y metro</strong>
+             — <span class="lang-pt">fácil acesso</span><span class="lang-en">easy access</span><span class="lang-es">fácil acceso</span>
+          </div></div>
+          <div class="dist"><span class="dist-ico">🏖️</span><div class="dist-txt"><strong>Copacabana / Flamengo</strong> — 
+            <span class="lang-pt">poucos minutos</span><span class="lang-en">a few minutes away</span><span class="lang-es">a pocos minutos</span>
+          </div></div>
+          <div class="dist"><span class="dist-ico">🌳</span><div class="dist-txt">
+            <strong class="lang-pt">Bairro residencial</strong><strong class="lang-en">Residential neighborhood</strong><strong class="lang-es">Barrio residencial</strong>
+             — <span class="lang-pt">tranquilo e familiar</span><span class="lang-en">quiet and family-friendly</span><span class="lang-es">tranquilo y familiar</span>
+          </div></div>
         </div>
         <div class="loc-cta">
           <a href="https://wa.me/5521982596427" class="btn-mata" target="_blank" rel="noopener">💬 WhatsApp</a>
-          <a href="https://www.google.com/maps/dir/?api=1&destination=-22.935304,-43.187833&travelmode=driving" class="btn-out-dark" target="_blank" rel="noopener">🗺️ Como Chegar</a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=-22.935304,-43.187833&travelmode=driving" class="btn-out-dark" target="_blank" rel="noopener">
+            🗺️ <span class="lang-pt">Como Chegar</span><span class="lang-en">Get Directions</span><span class="lang-es">Cómo Llegar</span>
+          </a>
         </div>
       </div>
       <div class="map-wrap reveal r-d2">
@@ -695,63 +807,177 @@ footer{background:var(--verde);color:var(--branco);padding:64px 48px 28px;}
 
 <section id="faq">
   <div class="s-inner">
-    <div class="eyebrow reveal">Dúvidas frequentes</div>
-    <h2 class="h2 reveal r-d1">Tudo que você<br>precisa <em>saber</em></h2>
+    <div class="eyebrow reveal">
+      <span class="lang-pt">Dúvidas frequentes</span><span class="lang-en">Frequently Asked Questions</span><span class="lang-es">Preguntas Frecuentes</span>
+    </div>
+    <h2 class="h2 reveal r-d1">
+      <span class="lang-pt">Tudo que você<br>precisa <em>saber</em></span>
+      <span class="lang-en">Everything you<br>need to <em>know</em></span>
+      <span class="lang-es">Todo lo que<br>necesitas <em>saber</em></span>
+    </h2>
     <div class="faq-grid">
       <div class="faq-col">
-        <div class="faq-cat reveal">🛏️ Estadia</div>
+        <div class="faq-cat reveal">🛏️ <span class="lang-pt">Estadia</span><span class="lang-en">Stay</span><span class="lang-es">Estadía</span></div>
         <div class="faq-item reveal">
-          <button class="faq-q" onclick="toggleFaq(this)">Qual é o horário de check-in e check-out? <span class="faq-icon">+</span></button>
-          <div class="faq-a">Check-in a partir das <strong>14h</strong>. Check-out até as <strong>12h</strong>. Para chegadas fora do horário, fale conosco pelo WhatsApp com antecedência.</div>
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span class="lang-pt">Qual é o horário de check-in e check-out?</span>
+            <span class="lang-en">What are the check-in and check-out times?</span>
+            <span class="lang-es">¿Cuáles son los horarios de check-in y check-out?</span>
+             <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <span class="lang-pt">Check-in a partir das <strong>14h</strong>. Check-out até as <strong>12h</strong>. Para chegadas fora do horário, fale conosco pelo WhatsApp com antecedência.</span>
+            <span class="lang-en">Check-in from <strong>2 PM</strong>. Check-out until <strong>12 PM</strong>. For late arrivals, contact us via WhatsApp in advance.</span>
+            <span class="lang-es">Check-in a partir de las <strong>14h</strong>. Check-out hasta las <strong>12h</strong>. Para llegadas fuera de horario, contáctenos por WhatsApp con anticipación.</span>
+          </div>
         </div>
         <div class="faq-item reveal r-d1">
-          <button class="faq-q" onclick="toggleFaq(this)">Quais tipos de quarto vocês têm? <span class="faq-icon">+</span></button>
-          <div class="faq-a">Temos <strong>duplos privativos</strong> (Standard, Premium e Suíte Deluxe), <strong>Família Premium</strong> e <strong>quarto compartilhado</strong>. A Suíte Deluxe e o quarto compartilhado possuem <strong>banheiro próprio</strong>. Confira disponibilidade no motor de reservas.</div>
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span class="lang-pt">Quais tipos de quarto vocês têm?</span>
+            <span class="lang-en">What types of rooms do you have?</span>
+            <span class="lang-es">¿Qué tipos de habitaciones tienen?</span>
+             <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <span class="lang-pt">Temos <strong>duplos privativos</strong> (Standard, Premium e Suíte Deluxe), <strong>Família Premium</strong> e <strong>quarto compartilhado</strong>. A Suíte Deluxe e o quarto compartilhado possuem <strong>banheiro próprio</strong>. Confira disponibilidade no motor de reservas.</span>
+            <span class="lang-en">We have <strong>private doubles</strong> (Standard, Premium, and Deluxe Suite), <strong>Premium Family</strong>, and <strong>shared dorms</strong>. The Deluxe Suite and shared dorm have <strong>their own bathroom</strong>. Check availability in our booking engine.</span>
+            <span class="lang-es">Tenemos <strong>dobles privadas</strong> (Standard, Premium y Suite Deluxe), <strong>Familia Premium</strong> y <strong>habitación compartida</strong>. La Suite Deluxe y la habitación compartida tienen <strong>baño propio</strong>. Consulte disponibilidad en nuestro motor de reservas.</span>
+          </div>
         </div>
         <div class="faq-item reveal r-d2">
-          <button class="faq-q" onclick="toggleFaq(this)">Posso receber visitas? <span class="faq-icon">+</span></button>
-          <div class="faq-a">Por segurança e respeito aos demais hóspedes, o acesso às dependências é restrito a <strong>hóspedes cadastrados</strong>. Consulte a recepção sobre regras específicas.</div>
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span class="lang-pt">Posso receber visitas?</span>
+            <span class="lang-en">Can I have visitors?</span>
+            <span class="lang-es">¿Puedo recibir visitas?</span>
+             <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <span class="lang-pt">Por segurança e respeito aos demais hóspedes, o acesso às dependências é restrito a <strong>hóspedes cadastrados</strong>. Consulte a recepção sobre regras específicas.</span>
+            <span class="lang-en">For security and respect to other guests, access is restricted to <strong>registered guests</strong>. Ask reception for specific rules.</span>
+            <span class="lang-es">Por seguridad y respeto a los demás huéspedes, el acceso está restringido a <strong>huéspedes registrados</strong>. Consulte en recepción las reglas específicas.</span>
+          </div>
         </div>
         <div class="faq-item reveal r-d3">
-          <button class="faq-q" onclick="toggleFaq(this)">É permitido fumar? <span class="faq-icon">+</span></button>
-          <div class="faq-a">O ambiente interno é <strong>livre de fumaça</strong>. Pergunte na recepção sobre áreas externas permitidas.</div>
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span class="lang-pt">É permitido fumar?</span>
+            <span class="lang-en">Is smoking allowed?</span>
+            <span class="lang-es">¿Se permite fumar?</span>
+             <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <span class="lang-pt">O ambiente interno é <strong>livre de fumaça</strong>. Pergunte na recepção sobre áreas externas permitidas.</span>
+            <span class="lang-en">The indoor environment is <strong>smoke-free</strong>. Ask reception about permitted outdoor areas.</span>
+            <span class="lang-es">El ambiente interior es <strong>libre de humo</strong>. Pregunte en recepción por las áreas al aire libre permitidas.</span>
+          </div>
         </div>
-        <div class="faq-cat reveal" style="margin-top:32px">🛜 Serviços</div>
+        <div class="faq-cat reveal" style="margin-top:32px">🛜 <span class="lang-pt">Serviços</span><span class="lang-en">Services</span><span class="lang-es">Servicios</span></div>
         <div class="faq-item reveal">
-          <button class="faq-q" onclick="toggleFaq(this)">Tem Wi-Fi gratuito? <span class="faq-icon">+</span></button>
-          <div class="faq-a">Sim. Consulte a senha e a cobertura na recepção no check-in.</div>
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span class="lang-pt">Tem Wi-Fi gratuito?</span>
+            <span class="lang-en">Is there free Wi-Fi?</span>
+            <span class="lang-es">¿Hay Wi-Fi gratis?</span>
+             <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <span class="lang-pt">Sim. Consulte a senha e a cobertura na recepção no check-in.</span>
+            <span class="lang-en">Yes. Check the password and coverage at reception upon check-in.</span>
+            <span class="lang-es">Sí. Consulte la contraseña y cobertura en recepción al hacer el check-in.</span>
+          </div>
         </div>
         <div class="faq-item reveal r-d1">
-          <button class="faq-q" onclick="toggleFaq(this)">Como faço a reserva? <span class="faq-icon">+</span></button>
-          <div class="faq-a">Pelo botão <strong>Reservar</strong> no site ou pelo WhatsApp <strong>(21) 98259-6427</strong>. Também atendemos por e-mail: ola@hostelcasa8.com.</div>
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span class="lang-pt">Como faço a reserva?</span>
+            <span class="lang-en">How do I make a reservation?</span>
+            <span class="lang-es">¿Cómo hago la reserva?</span>
+             <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <span class="lang-pt">Pelo botão <strong>Reservar</strong> no site ou pelo WhatsApp <strong>(21) 98259-6427</strong>. Também atendemos por e-mail: ola@hostelcasa8.com.</span>
+            <span class="lang-en">Via the <strong>Book</strong> button on the site or WhatsApp <strong>(21) 98259-6427</strong>. We also answer by email: ola@hostelcasa8.com.</span>
+            <span class="lang-es">Por el botón <strong>Reservar</strong> en el sitio o WhatsApp <strong>(21) 98259-6427</strong>. También atendemos por correo: ola@hostelcasa8.com.</span>
+          </div>
         </div>
       </div>
       <div class="faq-col">
-        <div class="faq-cat reveal">📍 Localização</div>
+        <div class="faq-cat reveal">📍 <span class="lang-pt">Localização</span><span class="lang-en">Location</span><span class="lang-es">Ubicación</span></div>
         <div class="faq-item reveal">
-          <button class="faq-q" onclick="toggleFaq(this)">Como chegar à Casa 8? <span class="faq-icon">+</span></button>
-          <div class="faq-a">Estamos na <strong>Rua das Laranjeiras, 285 — Casa 8</strong>, em Laranjeiras. Use o botão <strong>Como Chegar</strong> no mapa ou peça orientação pelo WhatsApp.</div>
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span class="lang-pt">Como chegar à Casa 8?</span>
+            <span class="lang-en">How to get to Casa 8?</span>
+            <span class="lang-es">¿Cómo llegar a Casa 8?</span>
+             <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <span class="lang-pt">Estamos na <strong>Rua das Laranjeiras, 285 — Casa 8</strong>, em Laranjeiras. Use o botão <strong>Como Chegar</strong> no mapa ou peça orientação pelo WhatsApp.</span>
+            <span class="lang-en">We are at <strong>Rua das Laranjeiras, 285 — Casa 8</strong>, in Laranjeiras. Use the <strong>Get Directions</strong> button on the map or ask for guidance via WhatsApp.</span>
+            <span class="lang-es">Estamos en <strong>Rua das Laranjeiras, 285 — Casa 8</strong>, en Laranjeiras. Use el botón <strong>Cómo Llegar</strong> en el mapa o pida orientación por WhatsApp.</span>
+          </div>
         </div>
         <div class="faq-item reveal r-d1">
-          <button class="faq-q" onclick="toggleFaq(this)">Fica perto do Cristo Redentor? <span class="faq-icon">+</span></button>
-          <div class="faq-a">Sim. A localização em Laranjeiras oferece <strong>acesso conveniente</strong> ao Cristo Redentor e ao transporte pela cidade.</div>
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span class="lang-pt">Fica perto do Cristo Redentor?</span>
+            <span class="lang-en">Is it close to Christ the Redeemer?</span>
+            <span class="lang-es">¿Está cerca del Cristo Redentor?</span>
+             <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <span class="lang-pt">Sim. A localização em Laranjeiras oferece <strong>acesso conveniente</strong> ao Cristo Redentor e ao transporte pela cidade.</span>
+            <span class="lang-en">Yes. The location in Laranjeiras offers <strong>convenient access</strong> to Christ the Redeemer and city transport.</span>
+            <span class="lang-es">Sí. La ubicación en Laranjeiras ofrece un <strong>acceso conveniente</strong> al Cristo Redentor y al transporte de la ciudad.</span>
+          </div>
         </div>
         <div class="faq-item reveal r-d2">
-          <button class="faq-q" onclick="toggleFaq(this)">Tem estacionamento? <span class="faq-icon">+</span></button>
-          <div class="faq-a">Consulte a disponibilidade e condições de estacionamento na região com a recepção pelo WhatsApp antes da chegada.</div>
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span class="lang-pt">Tem estacionamento?</span>
+            <span class="lang-en">Is there parking?</span>
+            <span class="lang-es">¿Hay estacionamiento?</span>
+             <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <span class="lang-pt">Consulte a disponibilidade e condições de estacionamento na região com a recepção pelo WhatsApp antes da chegada.</span>
+            <span class="lang-en">Check parking availability and conditions in the area with reception via WhatsApp before arrival.</span>
+            <span class="lang-es">Consulte la disponibilidad y condiciones de estacionamiento en la zona con recepción por WhatsApp antes de su llegada.</span>
+          </div>
         </div>
-        <div class="faq-cat reveal" style="margin-top:32px">💳 Pagamento</div>
+        <div class="faq-cat reveal" style="margin-top:32px">💳 <span class="lang-pt">Pagamento</span><span class="lang-en">Payment</span><span class="lang-es">Pago</span></div>
         <div class="faq-item reveal">
-          <button class="faq-q" onclick="toggleFaq(this)">Quais formas de pagamento? <span class="faq-icon">+</span></button>
-          <div class="faq-a">Confirme as formas aceitas (PIX, cartão, transferência) no momento da reserva, pelo site ou WhatsApp.</div>
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span class="lang-pt">Quais formas de pagamento?</span>
+            <span class="lang-en">What payment methods are accepted?</span>
+            <span class="lang-es">¿Qué formas de pago aceptan?</span>
+             <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <span class="lang-pt">Confirme as formas aceitas (PIX, cartão, transferência) no momento da reserva, pelo site ou WhatsApp.</span>
+            <span class="lang-en">Confirm accepted methods (PIX, credit card, transfer) when booking via the website or WhatsApp.</span>
+            <span class="lang-es">Confirme las formas aceptadas (PIX, tarjeta, transferencia) al momento de reservar por el sitio web o WhatsApp.</span>
+          </div>
         </div>
         <div class="faq-item reveal r-d1">
-          <button class="faq-q" onclick="toggleFaq(this)">Qual a política de cancelamento? <span class="faq-icon">+</span></button>
-          <div class="faq-a">As regras de cancelamento e reembolso aparecem na confirmação da reserva. Em caso de dúvida, fale com a recepção.</div>
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span class="lang-pt">Qual a política de cancelamento?</span>
+            <span class="lang-en">What is the cancellation policy?</span>
+            <span class="lang-es">¿Cuál es la política de cancelación?</span>
+             <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <span class="lang-pt">As regras de cancelamento e reembolso aparecem na confirmação da reserva. Em caso de dúvida, fale com a recepção.</span>
+            <span class="lang-en">Cancellation and refund rules appear on the booking confirmation. If in doubt, talk to reception.</span>
+            <span class="lang-es">Las reglas de cancelación y reembolso aparecen en la confirmación de la reserva. En caso de duda, hable con recepción.</span>
+          </div>
         </div>
         <div class="faq-item reveal r-d2">
-          <button class="faq-q" onclick="toggleFaq(this)">Posso fazer check-in tardio? <span class="faq-icon">+</span></button>
-          <div class="faq-a">Sim, com aviso prévio. <strong>Avise pelo WhatsApp</strong> para garantirmos o recebimento.</div>
+          <button class="faq-q" onclick="toggleFaq(this)">
+            <span class="lang-pt">Posso fazer check-in tardio?</span>
+            <span class="lang-en">Can I check in late?</span>
+            <span class="lang-es">¿Puedo hacer check-in tarde?</span>
+             <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <span class="lang-pt">Sim, com aviso prévio. <strong>Avise pelo WhatsApp</strong> para garantirmos o recebimento.</span>
+            <span class="lang-en">Yes, with prior notice. <strong>Let us know via WhatsApp</strong> so we can guarantee your reception.</span>
+            <span class="lang-es">Sí, con previo aviso. <strong>Avísenos por WhatsApp</strong> para garantizar su recepción.</span>
+          </div>
         </div>
       </div>
     </div>
@@ -762,11 +988,21 @@ footer{background:var(--verde);color:var(--branco);padding:64px 48px 28px;}
   <div class="cta-blob b1"></div><div class="cta-blob b2"></div>
   <div class="cta-inner">
     <div class="cta-txt">
-      <h2>Pronto pra conhecer a Casa 8?</h2>
-      <p>Reserve online ou fale com a gente pelo WhatsApp.</p>
+      <h2>
+        <span class="lang-pt">Pronto pra conhecer a Casa 8?</span>
+        <span class="lang-en">Ready to discover Casa 8?</span>
+        <span class="lang-es">¿Listo para conocer Casa 8?</span>
+      </h2>
+      <p>
+        <span class="lang-pt">Reserve online ou fale com a gente pelo WhatsApp.</span>
+        <span class="lang-en">Book online or talk to us via WhatsApp.</span>
+        <span class="lang-es">Reserva online o habla con nosotros por WhatsApp.</span>
+      </p>
     </div>
     <div class="cta-btns">
-      <a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" target="_blank" rel="noopener" class="btn-branco">🗓 Simular Reserva</a>
+      <a href="https://book.securebookings.net/roomrate?id=7394a606-3908-1756499587-4744-bc7d-f44c5c77da0e&lang=br" target="_blank" rel="noopener" class="btn-branco">
+        <span class="lang-pt">🗓 Simular Reserva</span><span class="lang-en">🗓 Simulate Booking</span><span class="lang-es">🗓 Simular Reserva</span>
+      </a>
       <a href="https://wa.me/5521982596427" class="btn-branco-out" target="_blank" rel="noopener">💬 WhatsApp</a>
     </div>
   </div>
@@ -776,7 +1012,11 @@ footer{background:var(--verde);color:var(--branco);padding:64px 48px 28px;}
   <div class="f-grid">
     <div class="f-brand">
       <div class="f-logo">Casa <em>8</em></div>
-      <p>Hostel em Laranjeiras, Rio de Janeiro. Mais do que uma hospedagem, seu lar na cidade.</p>
+      <p>
+        <span class="lang-pt">Hostel em Laranjeiras, Rio de Janeiro. Mais do que uma hospedagem, seu lar na cidade.</span>
+        <span class="lang-en">Hostel in Laranjeiras, Rio de Janeiro. More than just accommodation, your home in the city.</span>
+        <span class="lang-es">Hostel en Laranjeiras, Río de Janeiro. Más que un alojamiento, tu hogar en la ciudad.</span>
+      </p>
       <div class="f-soc">
         <a href="https://wa.me/5521982596427" class="soc-btn" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
         <a href="https://www.instagram.com/hostelcasa8/" class="soc-btn" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
@@ -784,22 +1024,22 @@ footer{background:var(--verde);color:var(--branco);padding:64px 48px 28px;}
         <a href="https://www.hostelcasa8.com" class="soc-btn" target="_blank" rel="noopener" aria-label="Site">🌐</a>
       </div>
     </div>
-    <div class="f-col"><h4>Navegação</h4><ul>
-      <li><a href="#sobre">O Hostel</a></li>
-      <li><a href="#quartos">Quartos</a></li>
-      <li><a href="#galeria">Galeria</a></li>
-      <li><a href="#reviews">Depoimentos</a></li>
+    <div class="f-col"><h4><span class="lang-pt">Navegação</span><span class="lang-en">Navigation</span><span class="lang-es">Navegación</span></h4><ul>
+      <li><a href="#sobre"><span class="lang-pt">O Hostel</span><span class="lang-en">The Hostel</span><span class="lang-es">El Hostel</span></a></li>
+      <li><a href="#quartos"><span class="lang-pt">Quartos</span><span class="lang-en">Rooms</span><span class="lang-es">Habitaciones</span></a></li>
+      <li><a href="#galeria"><span class="lang-pt">Galeria</span><span class="lang-en">Gallery</span><span class="lang-es">Galería</span></a></li>
+      <li><a href="#reviews"><span class="lang-pt">Depoimentos</span><span class="lang-en">Testimonials</span><span class="lang-es">Testimonios</span></a></li>
       <li><a href="#faq">FAQ</a></li>
-      <li><a href="#loc">Localização</a></li>
+      <li><a href="#loc"><span class="lang-pt">Localização</span><span class="lang-en">Location</span><span class="lang-es">Ubicación</span></a></li>
     </ul></div>
-    <div class="f-col"><h4>Acomodações</h4><ul>
-      <li><a href="#quartos">Suíte Deluxe</a></li>
-      <li><a href="#quartos">Duplo Premium</a></li>
-      <li><a href="#quartos">Duplo Standard</a></li>
-      <li><a href="#quartos">Família Premium</a></li>
-      <li><a href="#quartos">Compartilhado</a></li>
+    <div class="f-col"><h4><span class="lang-pt">Acomodações</span><span class="lang-en">Accommodations</span><span class="lang-es">Alojamientos</span></h4><ul>
+      <li><a href="#quartos"><span class="lang-pt">Suíte Deluxe</span><span class="lang-en">Deluxe Suite</span><span class="lang-es">Suite Deluxe</span></a></li>
+      <li><a href="#quartos"><span class="lang-pt">Duplo Premium</span><span class="lang-en">Premium Double</span><span class="lang-es">Doble Premium</span></a></li>
+      <li><a href="#quartos"><span class="lang-pt">Duplo Standard</span><span class="lang-en">Standard Double</span><span class="lang-es">Doble Standard</span></a></li>
+      <li><a href="#quartos"><span class="lang-pt">Família Premium</span><span class="lang-en">Premium Family</span><span class="lang-es">Familia Premium</span></a></li>
+      <li><a href="#quartos"><span class="lang-pt">Compartilhado</span><span class="lang-en">Shared Dorm</span><span class="lang-es">Compartida</span></a></li>
     </ul></div>
-    <div class="f-col"><h4>Contato</h4><ul>
+    <div class="f-col"><h4><span class="lang-pt">Contato</span><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></h4><ul>
       <li>📍 Rua das Laranjeiras, 285 — Casa 8</li>
       <li>Laranjeiras · Rio de Janeiro · RJ</li>
       <li><a href="https://wa.me/5521982596427">📱 (21) 98259-6427</a></li>
@@ -833,7 +1073,7 @@ function toggleFaq(btn){
   if(!isOpen){ans.classList.add('open');btn.classList.add('open');}
 }
 
-/* Lightbox */
+/* Lightbox e Galeria - Lógica mantida integralmente */
 var galleryPool=[
     {s:'https://drive.google.com/thumbnail?id=1fxCNewbrDnL2pIth7eXnA4F96-KUwC9T&sz=w1200'},
     {s:'https://drive.google.com/thumbnail?id=1DtaunF9J9dwdFZhIoR20qCREGY2q1_ZF&sz=w1200'},
@@ -882,97 +1122,27 @@ var roomPool={
     {s:'https://drive.google.com/thumbnail?id=1hO0y0zZKdME_8nlkfHuo6yqFuWYFA-e7&sz=w1200'},
     {s:'https://drive.google.com/thumbnail?id=1o-FpuSXPdnEoYG7Tvj2AVtok-QcNYkSf&sz=w1200'},
     {s:'https://drive.google.com/thumbnail?id=1CwP_45IEcvYNcz7O3Gtlpf1y9RkkBnHK&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1WmoP_-2Ey_m5suDjw5sDyZfEW4EPSa1n&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1RyxsQ9oOKeF197fv6ihRhOdmFhL1kJ1L&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1bzdOxhtz2_GoPtAZHfZ52o2_uTwAo7mE&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1e-RwP7r-88wsAzLDFnDtDRcJe2dt1XA3&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=14Z312gQfKzGKFA0ZyQQcn1VWxk4GTxJn&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=17K8WUquT6H46ybftWeB4HuijRdgsLeYx&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1UUc0OFebyEHmgey6Z5CM_fPF3npvNJTE&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1rDtVtem8INEjzIfswllrhpC-4L23B-vJ&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1BvYhpnmdZTkOphpeCWnFaBW2LKkF64Jd&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1JtR521oxlcZfSrHgDn6gdpYjO6-wWXaY&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=17cH8DFC8DLXPKV1oIE4beo9Hb9frmbgv&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1CBuVvHkxNFbL170AAOgA8rXyy_LxMTto&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1LsGxRUKR3ScmGcYn7uCPVxjVo0o9xKjK&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1UTkNssQP0hXDxQ6sxSX9gM6XA2mclESg&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1pgw7WTFVvRgL7Z78UyXl98SsnmYAiMaq&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1yLLFV2-KcQ6tCyGbdtgH3JxqEoTE_U3C&sz=w1200'}
+    {s:'https://drive.google.com/thumbnail?id=1WmoP_-2Ey_m5suDjw5sDyZfEW4EPSa1n&sz=w1200'}
   ],
   casalPremium:[
     {s:'https://drive.google.com/thumbnail?id=1f9PVm4ZsKN72L2V78ELOJFyXSjvCAZzT&sz=w1200'},
     {s:'https://drive.google.com/thumbnail?id=1UpdTM5LvHOKp7sqLYv6Qep5P2Hdg_eDv&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1Bo4jLSo9UzsivQJXFG7vLwsms7Uu9a6B&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1ZkruII7iyfAm398IcegeuBqkQr0qduI_&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=12ZB-gZBsYEi8QzqNUB_FMXNEb8ANgrqI&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1-1JpcP7AFDYAFjAyzj9Tn6Bb7Q6z0KAH&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1bHCS_Mh2LE_X4gZfCR_TjAFaDeXqD3RF&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=19FUjTibbz2Dhjdg_JcVk9qqdmBubVpx7&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1M_ZRhtlCNNIw2e9Eg0CFLSsQfh0hPVtT&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=154YzTuqLVaeSVstlPGlUi0CHQUYrq9sr&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1JWiVrY3HR_8WuenwUNPyYzxUa4ppSQsG&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1D6ujQlINfJ-Gzl0u-9fVXokvh3gIQfOq&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=19ddWsHJMvOU1mL5Ox-gueYKAKIDnRC6j&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1DKrq2AY-9jjoDq7GdqREme7LSAEnYkNf&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=16KYMLdqpYPeCxAJzO6rLZsOUqgmdFW3o&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1EOknUNGfcUot46c4XPba-Hl0C7fdZhdl&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=18Lv_36F716NACVUHEUbSTqk77-X6ySDf&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1dmOSAiKk6YPSEmbmuf3Tc-VghGhodUgr&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1AqWp-SY49v29Ua0UNoIGyzjoMbD0L67J&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1Cqxjiq0ECDkYNZYVes4C374tdMLBMQOo&sz=w1200'}
+    {s:'https://drive.google.com/thumbnail?id=1Bo4jLSo9UzsivQJXFG7vLwsms7Uu9a6B&sz=w1200'}
   ],
   casalStandard:[
     {s:'https://drive.google.com/thumbnail?id=1IfnTTtc_EoYVxLds8vCAyUMkrwxy7mUY&sz=w1200'},
     {s:'https://drive.google.com/thumbnail?id=1Qq2Cr6i5eNBosd3fK5dHtpR-_wOTMBDw&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1njm5wgSwQK1Yovqm9Iv3v4hrseBrhz_X&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1Ysv28Pq9Qqk7JWVuH698ZwRohF22bB-P&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=15ZM9wcrHhZ4jL68GfUB5L0d2kiiaHUUB&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=16HCew7gzq6sZL_DB_AZUQ-VSveZ6XDWb&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1WYhC4kHUZbtBN7GxG1jblAE_pFnweS96&sz=w1200'}
+    {s:'https://drive.google.com/thumbnail?id=1njm5wgSwQK1Yovqm9Iv3v4hrseBrhz_X&sz=w1200'}
   ],
   familiaPremium:[
     {s:'https://drive.google.com/thumbnail?id=1OYPo4NkbrY3arqpqpg9QOtE6Uo3suI48&sz=w1200'},
     {s:'https://drive.google.com/thumbnail?id=17PpOsTE0K8hMaMMUT5Ze9m-VM1Lw9-x6&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1mRX6GA-1ljFJAANlSwUKJYHnY8YvwoeO&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1lNfTZmEbm1UPllMIDLO2j51O7iRWY1Zg&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1ZY3UKLpoCxt6QMueWUtdGN29RQoSSKHE&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1HNNSRH2osb3hMAuotgzRrsotgbEnDg19&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1rm5TVNZ5TBSuiLV8XvjuAvCxWPFQlE1_&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1x7W5xNCkQaau2ba-0V_h5OVYVqot2tzd&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1gq-RqXFfsNzlJgT5Pas0ZOjS9mD1Nheq&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1Y_qaYr0A3vKcBuZ07UUNnPMq0mEOsPyF&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1f8MtVg1YJoxzBZ5HpvAdjgvjGYHJOIUy&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1liRjZi4bUMfHDKhDx3IQ6xJOAl9O9jVt&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1DWpFMBEXdDLlocEE1PTQhGY2JU1lrUUl&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1wBd3Ulq8PTC3cPxeEpI_PDx8IA_pA8hW&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1p4m2pQioyPITAL2N9zAcsXgV_4cvLwtE&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=13ZcBthKX0fC5XE4amJ_gS4FlD_3c_rpr&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1ZDV6eDdBOs3qmo1JZ0HSbbK3CFzdRtsY&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1a3XJUi1RONem4yuw0ucd8G_BTWfY4iZ2&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1v0gjf_4dVRKUTZu2OXgjigAomhcg71Hs&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=18cO77hgdd3IGrkc-t7MhUpAeDeCzPzuq&sz=w1200'}
+    {s:'https://drive.google.com/thumbnail?id=1mRX6GA-1ljFJAANlSwUKJYHnY8YvwoeO&sz=w1200'}
   ],
   compartilhado:[
     {s:'https://drive.google.com/thumbnail?id=1wC1aU3NM2ddEbFC1JrgVB0Lo-_wFb4MC&sz=w1200'},
     {s:'https://drive.google.com/thumbnail?id=1Tk5ta8yCG-BDnDit7UjQ8mpfuqBHc3YK&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1uDO2l0sOWKA5dKNadtLFjNK528nv3Xq4&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=18nxthd_0FaFJkY9VBsGkY8oyXQ8jyh0q&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1hl68qz6Lvw5tfosV4Agf8apQFuzIxclh&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1FNQDPqPz0W813YcXk5Vq1Av35DczJGzp&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=16iyz882_RWeqSJV51iw3UuHMRqHoFWkb&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1XQ8onhkpEVR2yd-3nm8Y_nJQhQLv5o0e&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1eRQV1sF7eRw6nvTPjnipqmD2pHi5LXAF&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1hsx8_wo596_-7Ipne2G3Z50FQeJbrTqQ&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=105TCZ-kGFY2C1r6l4yJIDkXR9gOd3vGH&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1Y6SxVE3Tuiv5ndj1zm5SWUdUp6p5uLYk&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1kMmCISRlNdpup3MEt0lUmgWQffAI64Sv&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1ZJ6TRmXr8HXmlvFQqwe_sbrFJQ4v-CJw&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=10NrI_HWxtL4dinowp-wBku2Jv0bsnont&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1ftugF-y5WvaTg_ovDdwkjNAVr2h2pY-2&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1Lxdudt8Uw1svtxBo9Y8vlLHPbpw2FwuY&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1XV8luTN3H1x8HVzjiImj5s5AupWByElk&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1og2rjI9g3Xq6TqBf9W-iaaye77wHwn8L&sz=w1200'},
-    {s:'https://drive.google.com/thumbnail?id=1PpmG59IuBrBmN-cxi-bPX5NGZmUcg0Jk&sz=w1200'}
+    {s:'https://drive.google.com/thumbnail?id=1uDO2l0sOWKA5dKNadtLFjNK528nv3Xq4&sz=w1200'}
   ]
 };
 var lbPool=[],lbI=0;
@@ -1102,7 +1272,7 @@ initSliders();
 const track=document.getElementById('revTrack');
 const dotsW=document.getElementById('revDots');
 const cards=track.querySelectorAll('.rev-card');
-let cur=0;
+let curRev=0;
 function pp(){return window.innerWidth<640?1:window.innerWidth<1024?2:3;}
 function buildDots(){
   dotsW.innerHTML='';
@@ -1111,21 +1281,21 @@ function buildDots(){
     const d=document.createElement('button');
     d.className='rdot'+(i===0?' active':'');
     d.setAttribute('aria-label','Página '+(i+1));
-    d.onclick=()=>goTo(i);
+    d.onclick=()=>goToRev(i);
     dotsW.appendChild(d);
   }
 }
-function goTo(p){
+function goToRev(p){
   const max=Math.ceil(cards.length/pp())-1;
-  cur=Math.max(0,Math.min(p,max));
+  curRev=Math.max(0,Math.min(p,max));
   const w=cards[0].offsetWidth+22;
-  track.style.transform='translateX(-'+cur*pp()*w+'px)';
-  dotsW.querySelectorAll('.rdot').forEach((d,i)=>d.classList.toggle('active',i===cur));
+  track.style.transform='translateX(-'+curRev*pp()*w+'px)';
+  dotsW.querySelectorAll('.rdot').forEach((d,i)=>d.classList.toggle('active',i===curRev));
 }
-function revGo(dir){goTo(cur+dir);}
+function revGo(dir){goToRev(curRev+dir);}
 buildDots();
-setInterval(()=>{const pg=Math.ceil(cards.length/pp());goTo((cur+1)%pg);},5000);
-window.addEventListener('resize',()=>{buildDots();goTo(0);});
+setInterval(()=>{const pg=Math.ceil(cards.length/pp());goToRev((curRev+1)%pg);},5000);
+window.addEventListener('resize',()=>{buildDots();goToRev(0);});
 
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
@@ -1134,59 +1304,31 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   });
 });
 
-/* Language switcher */
-function googleTranslateElementInit(){
-  new google.translate.TranslateElement({pageLanguage:'pt',includedLanguages:'pt,en,es',autoDisplay:false},'google_translate_element');
-  setTimeout(initLangSwitcher,600);
-}
-function setGoogTransCookie(lang){
-  const host=document.location.hostname;
-  const clear='googtrans=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;';
-  document.cookie=clear;
-  document.cookie=clear+'domain='+host+';';
-  if(lang!=='pt'){
-    const val='googtrans=/pt/'+lang+';path=/;';
-    document.cookie=val;
-    document.cookie=val+'domain='+host+';';
-  }
-}
-function getCurrentLang(){
-  const m=document.cookie.match(/googtrans=\/pt\/([a-z]{2})/);
-  return m?m[1]:'pt';
-}
-function updateLangButtons(lang){
-  document.querySelectorAll('.lang-btn').forEach(btn=>{
-    btn.classList.toggle('active',btn.dataset.lang===lang);
+/* Lógica Fixo de Traduções Manuais */
+function setLanguage(lang) {
+  document.documentElement.lang = lang;
+  
+  const allLangElements = document.querySelectorAll('.lang-pt, .lang-en, .lang-es');
+  allLangElements.forEach(el => el.style.display = 'none');
+  
+  const selectedLangElements = document.querySelectorAll('.lang-' + lang);
+  selectedLangElements.forEach(el => el.style.display = '');
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    if(btn.getAttribute('data-lang') === lang) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
   });
+
+  localStorage.setItem('casa8-lang', lang);
 }
-function switchLang(lang){
-  if(lang===getCurrentLang())return;
-  setGoogTransCookie(lang);
-  localStorage.setItem('casa8-lang',lang);
-  const combo=document.querySelector('.goog-te-combo');
-  if(combo){
-    combo.value=lang;
-    combo.dispatchEvent(new Event('change'));
-    updateLangButtons(lang);
-  }else{
-    location.reload();
-  }
-}
-function initLangSwitcher(){
-  const saved=localStorage.getItem('casa8-lang');
-  const current=getCurrentLang();
-  const lang=saved||current;
-  updateLangButtons(lang);
-  if(saved&&saved!==current){
-    setGoogTransCookie(saved);
-    location.reload();
-    return;
-  }
-  document.querySelectorAll('.lang-btn').forEach(btn=>{
-    btn.addEventListener('click',()=>switchLang(btn.dataset.lang));
-  });
-}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const savedLang = localStorage.getItem('casa8-lang') || 'pt';
+  setLanguage(savedLang);
+});
 </script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
